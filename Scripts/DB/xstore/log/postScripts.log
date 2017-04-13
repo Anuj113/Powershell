@@ -1,0 +1,439 @@
+SQL> UPDATE sys.USER$ set SPARE6=NULL;
+
+121 rows updated.
+
+SQL> @&dbhome_1\rdbms\admin\dbmssml.sql;
+SQL> CREATE OR REPLACE LIBRARY dbms_sumadv_lib AS 'E:\app\oracle\product\12.1.0\dbhome_1\bin\oraqsmashr.dll';
+  2  /
+
+Library created.
+
+SQL> @&dbhome_1\rdbms\admin\dbmsclr.plb;
+SQL> ALTER SESSION SET "_ORACLE_SCRIPT"=TRUE;
+
+Session altered.
+
+SQL> DROP PUBLIC DATABASE LINK DBMS_CLRDBLINK;
+DROP PUBLIC DATABASE LINK DBMS_CLRDBLINK
+                          *
+ERROR at line 1:
+ORA-02024: database link not found 
+
+
+SQL> CREATE PUBLIC DATABASE LINK DBMS_CLRDBLINK USING 'ORACLR_CONNECTION_DATA';
+
+Database link created.
+
+SQL> CREATE OR REPLACE LIBRARY ORACLECLR_LIB wrapped
+  2  a000000
+  3  1
+  4  abcd
+  5  abcd
+  6  abcd
+  7  abcd
+  8  abcd
+  9  abcd
+ 10  abcd
+ 11  abcd
+ 12  abcd
+ 13  abcd
+ 14  abcd
+ 15  abcd
+ 16  abcd
+ 17  abcd
+ 18  abcd
+ 19  16
+ 20  51 8d
+ 21  7S/AYgi7WGSr2brhjZHNHPqQU1cwg04I9Z7AdBjDpSjA9TNSMjO9GP4I9Qm4dCtp6jfnlRLO
+ 22  +EXUFAGLlV0fbBvBjoirKWNdXU3VV0WYkgIWTZhXOjnGHQ2+VzowkkIKuoKmprwLH6s=
+ 23  
+ 24  /
+
+Library created.
+
+SQL> DROP TYPE DBMS_CLRParamTable;
+
+Type dropped.
+
+SQL> DROP TYPE DBMS_CLRType;
+
+Type dropped.
+
+SQL> CREATE OR REPLACE TYPE DBMS_CLRType wrapped
+  2  a000000
+  3  1
+  4  abcd
+  5  abcd
+  6  abcd
+  7  abcd
+  8  abcd
+  9  abcd
+ 10  abcd
+ 11  abcd
+ 12  abcd
+ 13  abcd
+ 14  abcd
+ 15  abcd
+ 16  abcd
+ 17  abcd
+ 18  abcd
+ 19  d
+ 20  4be 213
+ 21  N4OA+FWuVhVs9fysc7PUuB9nPFswgwKJLUhqyi9A2sE+BKQmhBMrLmPcqVLmRAcyIsYyp1lV
+ 22  mDPN9t2fedaOIOT+Vapbiw68K9iOYb6h1tL4Ttcwam7Ow/FULQvYi4ViQhE6NfYCFQZLqm4v
+ 23  EfC+1omrW+rNym3Oq6exDUBe/JurL7KOXysyNOXcngBpiMZeohGPtJrmUF5j9gLMun4a4FAL
+ 24  LdJvbSdL7holnzSrYYw7J+MFIwJH/J5rHuHsXDzeewdsmHtUE+wBlxtqV/rXe3Is84dTPhMB
+ 25  eLd70miCwNjMJTW+XRITQxKVs0lUW/UzNHrHWdAGFbNby5XZ7s6fdKq4id9+OSHL3L92T+Hn
+ 26  MYPILUZ+CHb0NNloAzVVIXXAtrYSt9T0d4UKLU5xBOhLTfUjoYyrFZMgfxuMHvVYRsE7Ip0H
+ 27  +bzYCF7E7mAqft01hLTywIXlbwal/9CVppS1ctZA3kZvHVhZP/I7OSS9u9a9xSfzQJknxbV6
+ 28  ayejhJhzxmos3GPzhQ==
+ 29  
+ 30  /
+
+Type created.
+
+SQL> CREATE OR REPLACE TYPE BODY DBMS_CLRType wrapped
+  2  a000000
+  3  1
+  4  abcd
+  5  abcd
+  6  abcd
+  7  abcd
+  8  abcd
+  9  abcd
+ 10  abcd
+ 11  abcd
+ 12  abcd
+ 13  abcd
+ 14  abcd
+ 15  abcd
+ 16  abcd
+ 17  abcd
+ 18  abcd
+ 19  e
+ 20  41f 199
+ 21  m6WGBxMZmszs729iboPhfjA4VcUwgwK3AK5qfC9AWPjVSDa9qC0Jf87VryU6dpByeWol9JCN
+ 22  qq5u498nLQOiYU/BAE+2gNSvN0qfNgqEe/2ROjr54U+fphsJ0/9gZoSc+uPQ9T3oj4YOVAJl
+ 23  4a4OAD4cckHbgUpPsOGmA3AAmGzPIDWhWyp0QZIS5CEfOElYvfFqy8Ps6D6MVmInsRLsY+YP
+ 24  4nM07WoBwp3zFu9v7oFvcf1zbQ8rK/xFhvq6Luol9am+Z3+XP9V3OMNcEQs8fSeJwFBKCpNs
+ 25  PRrOj/FNfH6em74mcFU+LEoonnmDZdRpgkcH5UEIDlMCfwkPEEI7ynmOyTJ+zTHdOYzixHep
+ 26  RU6BEw79NUqAIPaljktotKqlmxONLe+Ymo3GapbiOkT1
+ 27  
+ 28  /
+
+Type body created.
+
+SQL> CREATE OR REPLACE TYPE DBMS_CLRParamTable AS TABLE OF DBMS_CLRType;
+  2  /
+
+Type created.
+
+SQL> CREATE OR REPLACE PACKAGE DBMS_CLR wrapped
+  2  a000000
+  3  1
+  4  abcd
+  5  abcd
+  6  abcd
+  7  abcd
+  8  abcd
+  9  abcd
+ 10  abcd
+ 11  abcd
+ 12  abcd
+ 13  abcd
+ 14  abcd
+ 15  abcd
+ 16  abcd
+ 17  abcd
+ 18  abcd
+ 19  9
+ 20  3a7d 759
+ 21  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
+ 47  
+ 48  /
+
+Package created.
+
+SQL> show errors
+No errors.
+SQL> CREATE OR REPLACE PACKAGE BODY DBMS_CLR wrapped
+  2  a000000
+  3  1
+  4  abcd
+  5  abcd
+  6  abcd
+  7  abcd
+  8  abcd
+  9  abcd
+ 10  abcd
+ 11  abcd
+ 12  abcd
+ 13  abcd
+ 14  abcd
+ 15  abcd
+ 16  abcd
+ 17  abcd
+ 18  abcd
+ 19  b
+ 20  8f6a f76
+ 21  0YF42USh6o/YjTnYbCDNQFvQQeUwgz1MNbeM328Z9ovqS76gmJcFPblZ8ddFi8pLiuhmRpm4
+ 22  vxLR4js7aMDybFytR9CaSahnrudodWDj4r5UJYTQu/jSpimhxxSzZF1n1nxVkNZMdV2c4wH7
+ 23  +iQQnuHO6o1xhxFvTZ0WQ0I1MPM0yFYjGzHrJ071LOTBDLjEQiO0enoiegB6GXk9RDCXKUNa
+ 24  ZfGOwe+yo7HnC9zCTmyLRABnH7iNxmJ1ryBtXE8xt3wFA4lUdBJHPy/JmNKOwmETAMlPAogk
+ 25  bKjXQHVzFhLvlWdaP9PJ6W5pEch2LXnQMXKF2M7l/TN1c/1Yf5GxCzNtBvDJlkbNwF0B0DGL
+ 26  zMTaSbthBefaa504VEgaaYn1Lusi2iaOp5tq3fnyJrSkzQO3o+6fgPiKGlRlm3u45H4/4rly
+ 27  4AUXSUPTLSF249mWbNErarxS0YHTuQvZqc0NtyO9W/g6FIHxY2QISFSqCZYgvbbNW4860r6e
+ 28  kGOyN4XDBzg75+xhDOr+upSfiHepSMCjNpr0HB5UczrMYfOyzj1vWIrh4KocsGiDZov40pie
+ 29  y803pRS6ihZttwRAnw6D4/w96M+jz5gFGCUl7q7GVvB9uYmzytfnaI4QjLMmDgquFV9drS7m
+ 30  n4sUay/V/Eo8ynpN9h9JoDDcv82bdtHslZVYsx+XopQbcGIS1vjTxAJiKn1regCUb86xwnQY
+ 31  WU74Z1VgZ5qmstx15NcGfNYZ2droBn+ZbAFeKZL+KSy18D+11vlzBbX5kk7Eu9mrYM7uFBwx
+ 32  9+Q6qx9y5q5EcZNvWr8W0vFkwwir7rA46IaRcAPiaVC7dmumcffhkTdIq1SAqrIKEqOicogA
+ 33  261TYL+NgBURY7gR6wIwH3V4qdS+z35dsHMiSuDFGR/CzkRRFTeeie8jjv+98xyCwFpaXjmR
+ 34  xpXlavWk5PZOzmo5ue82D74EGK1ESBhnYG7kWu8IS/It9vhWLuEVtGM0twRxMBDo5tlkdtso
+ 35  4HJyOkxnzuIG5GbNvDaDOx31DdBRD1PhB/6wmTSWyNkiADdS++nxXV/brc1FEFKoEWjWzisX
+ 36  GyPos2QyqaOzeFPGrLlWjO/KzFJmp1KMfVc3JMYL7DeBbAAlCSy7qGonFk3OKcawcnsfCCJN
+ 37  c/jBnJcsHW8ePaLB4Y0wZI+vxLIC+LbQGmpboxah6veWjJU+9kY+uWH1Pk3l0h9DO9SMUX9E
+ 38  HwNouPXVcxGBQPo4iZHXyDwSSNQGHduTTdFkF1SJrreLrC+7DJwBt1wQpAh+/AaN6+q4rt8m
+ 39  uQPb2MDp9qb3pD9rnwpFBzJM+Q6ta42saOmYRnbQfyRoDMEN+I6zt7thTbhjPYRw1bmNmQ23
+ 40  4Y7Psec4gQ4mmV22sNVm9Hv474B39Xoyoj0SHHqQKCih4Z5X17cz8yjIv0CTdqNDA4MvQGD0
+ 41  +URJEwZJ0vAonAz4KeB6WoOzSwsEoRguHIHzTFzhg1xYByEKaeA0tnuonQeq0j65yD8piaw2
+ 42  eu+V5SBHagqNHMC5AgU9VJ2hgOzD29ouDPLA5Th/4PEZ//2AX75YQxaheyLyDFrVYVPD3Gdi
+ 43  YC5jmE6X+m4DukpB8nKAvZ4elehNwEglqumNP0XICZrVSn/3mHZijUHQJdMrGC4MGJ61lRqq
+ 44  T9cWsDxuzcDSGnEsbBaE0Tx9oAShUpzs/PRpmTyOtefMCL9NJ4gY052LlOsJAiGjoupqJebg
+ 45  JeTTBm2yYIbvsz182yW4+zjnNG6tdGsNtEQCqKUScQQlNuAohG1pL08P5s8mqwaM6dtkJlro
+ 46  WlZw8qFTrWQYX5HxQ01aeyLy6VoUK5RiZo4CA4BRuGs3Fnb9BxXVOFqR2pKWyu5DR04xFtX1
+ 47  NQMxj/5Tvn4uyt/79ImitUQUNG7qZ1cqMq3h0z/Q08jRyNH7AV0yqKvhrsGx8/L7h6eJ3YGz
+ 48  JyV34LaJWTkzD9xJKcE04GWb6JzvbCnOFqiojbSRwyAtpQ/yDQpO5frCRMmtGOWQLGPlpxEj
+ 49  jVzPTPFhkcWYzojPLq2BoieSM7BEGDvOkn/A9ol31VdhZ5UtIdOtXUEpSmJxMIqMicaSY7GK
+ 50  V9IPMI1kr0pu1maUsVk6RyARYaQTbZebXBnQLjMqondJDcfCyiaQPvpGPPGJhNhO5ieSG5pD
+ 51  oc1uz+N3q/MxGugz8JJkgkN9NBUnzcJMSuWJHowUAeOVtKyTtQ3Bf6d8Pt/4z7TmwRXU/9bu
+ 52  rXwuelswKl4S9spfkJdzwJsXR7/S12H0SxcL6907Ahs2wtn4mxTnoG2UzaOj9upC3XHU+Cuk
+ 53  JH8b35wiJ87D+vxfKfhaExiL09e87w2+tjcNKsh3M+FoOei8lAvFVtc7b9HuohNs5c3COREb
+ 54  TddAkAV8Pd8MLkQmLYiXbFGSnxtETft19LBh+nDKDpK5SiYOIXggU9vTeZ1pcOwRWBH8MVAd
+ 55  7tu+fV77g/Iqv/QW/5TqyGHK9j71Nk1osuXPK1S+lOo/lLS6NXllibAVxyJWBVeH88HXl24c
+ 56  6SKMFGIjNGbUxereTQQeikv62+PCnW4YLfqa5dvjaSdtCGAvOtIWmzpwXXl2QiTILrlDUJxH
+ 57  G+4yxcrwRiucZ/w+Jp5aHSZvyHieZW5x0O5+wHS6J3QSlVRJ7rLbS6ESbooF82Mqe3PAftO2
+ 58  CrtgRvH0OJAH3y9qG04gxXRSyU8MdA1oegKoYPpAOCoI9ZlfgZGaiWlRvQCxEd/rwKsO52W2
+ 59  6xu23spRI/mxwzCrOkzRs3eCoI6nOcMb8VcdF8rsYJ53w6mjCW5xrCcbPj5wYoUyrAo8cyBA
+ 60  sadEIa2DI8KVVjCxMdMbBntukHUDKPtV7OeCrdJ+n4qTSc7YKBDv/nDKMxC+yrbRGKDAAHZk
+ 61  8I9+8Mn0GgKRH4MnOnMroGIpL16MO7DaRzefkEtwDjvv3lE7lgwoRqsBNlkCefaVmmxLMNeH
+ 62  a4PmfvZMIx8gPsTtyq75SHoFElIekLTPLGCwsSseJrLAwljNUwZFldH/EaGpAL012sefwoS4
+ 63  8JTeirF73cYZ8omBE9kdQW/TLkIYoFLqphAjxTjeBEvxw3Nb/Td510WnbeGHsM3W3O49SkOi
+ 64  2Cf2RVXbp/B6hg3te7m2Daviy7SVgP1mrBMqi0g/Af1yfXk7d/jbSB3lHcCzrU3junn6BeZI
+ 65  kx6IO83Y+08wPaYyZ1YiotN/CpYvuk15+bA5ZIUNVg342+LL5R0j8Ib+pYXt5nz+iTi5rZVo
+ 66  f8Y00F0irOmQF2iSRwoM3JhbebvjgcjMuYFpMnvcmFveDd32/RppwQXKKjzU7asalInROSaf
+ 67  P/F/WhLnQxxllxDoiZhdib/xgxrCtCLg6WMXGmFlN89mDTXr+yZ92HpZJ3JnsnP9sGvGaiH1
+ 68  V/Jq4jWjsDpUzo4yvNcsq4gJh9ccK2lFddp3y/GEzzw+gG8i6ZAXz+wxoyIIk4Qpqa5zccRv
+ 69  Tz2erltj4C3ZhKPwlGWadTtnMqLiYWqOtf7xMm+nAlVlPteCSLqTfiJ/Bd0pqer1iojglLCp
+ 70  k3U7/TBg4iqM/0msf8LLWkiQoslJo0Migcx5FB46l3r/fE7xEkRhDDMTHeyK5AO/md1adtJc
+ 71  OX77e3CC5zcyFq9a2QN93UHbfQ8G8GweswPk/aQReN5X1L6TK4tcGHAsThZrJV6LUjno0EfV
+ 72  DqRlmnYLAnWx6wRioAoncjBhkdaSosJKJh1A8O9j7CTkjTxzRLmaxsTGLBnLJEUNKEjOCg7Z
+ 73  PtbavcUzyo5t62Pbe+91NkOaIgy3yiTBKFEngA7V8Qru5plS03cegkSTd0QPueX2yFp36wZI
+ 74  BTGUgBBVPFy+5uT/y4Im8B8RG86YO4T18No6mr4rB8Ch0rpVz/hvihZttwTRqD/KyHmNlFZD
+ 75  LaMFquQsq7Ehsw==
+ 76  
+ 77  /
+
+Package body created.
+
+SQL> show errors
+No errors.
+SQL> CREATE OR REPLACE PUBLIC SYNONYM DBMS_CLR FOR DBMS_CLR;
+
+Synonym created.
+
+SQL> DECLARE
+  2    ORCL_HOME_DIR VARCHAR2(1024);
+  3  BEGIN
+  4    DBMS_SYSTEM.GET_ENV('ORACLE_HOME', ORCL_HOME_DIR);
+  5    EXECUTE IMMEDIATE 'CREATE OR REPLACE DIRECTORY ORACLECLRDIR AS ''' || ORCL_HOME_DIR || '\bin\clr''';
+  6  END;
+  7  /
+
+PL/SQL procedure successfully completed.
+
+SQL> show errors
+No errors.
+SQL> ALTER SESSION SET "_ORACLE_SCRIPT"=FALSE;
+
+Session altered.
+
+SQL> execute dbms_datapump_utl.replace_default_dir;
+
+PL/SQL procedure successfully completed.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> alter session set current_schema=ORDSYS;
+
+Session altered.
+
+SQL> @&dbhome_1\ord\im\admin\ordlib.sql;
+SQL> Rem
+SQL> Rem ordlib.sql
+SQL> Rem
+SQL> Rem Copyright (c) 1998, 2013, Oracle and/or its affiliates.
+SQL> Rem All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      ordlib.sql - Oracle Multimedia Install Script
+SQL> Rem
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      Internal Oracle Multimedia install script.  Creates libraries.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem
+SQL> 
+SQL> @@?/rdbms/admin/sqlsessstart.sql
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/sqlsessstart.sql /main/1 2013/03/13 13:08:33 surman Exp $
+SQL> Rem
+SQL> Rem sqlsessstart.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      sqlsessstart.sql - SQL session start
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      Any commands which should be run at the start of all oracle
+SQL> Rem      supplied scripts.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem      See sqlsessend.sql for the corresponding end script.
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    surman	03/08/13 - 16462837: Common start and end scripts
+SQL> Rem    surman	03/08/13 - Created
+SQL> Rem
+SQL> 
+SQL> alter session set "_ORACLE_SCRIPT" = true;
+
+Session altered.
+
+SQL> 
+SQL> alter session set current_schema="ORDSYS";
+
+Session altered.
+
+SQL> create or replace library ORDIMLIBS as 'E:\app\oracle\product\12.1.0\dbhome_1\bin\oraordim12.dll';
+  2  /
+
+Library created.
+
+SQL> create or replace library ORDIMLIBT trusted as static;
+  2  /
+
+Library created.
+
+SQL> 
+SQL> 
+SQL> @?/rdbms/admin/sqlsessend.sql
+SQL> Rem
+SQL> Rem $Header: rdbms/admin/sqlsessend.sql /main/1 2013/03/13 13:08:33 surman Exp $
+SQL> Rem
+SQL> Rem sqlsessend.sql
+SQL> Rem
+SQL> Rem Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
+SQL> Rem
+SQL> Rem    NAME
+SQL> Rem      sqlsessend.sql - SQL session end
+SQL> Rem
+SQL> Rem    DESCRIPTION
+SQL> Rem      Any commands which should be run at the end of all oracle
+SQL> Rem      supplied scripts.
+SQL> Rem
+SQL> Rem    NOTES
+SQL> Rem      See sqlsessstart.sql for the corresponding start script.
+SQL> Rem
+SQL> Rem    MODIFIED   (MM/DD/YY)
+SQL> Rem    surman	03/08/13 - 16462837: Common start and end scripts
+SQL> Rem    surman	03/08/13 - Created
+SQL> Rem
+SQL> 
+SQL> alter session set "_ORACLE_SCRIPT" = false;
+
+Session altered.
+
+SQL> 
+SQL> 
+SQL> alter session set current_schema=SYS;
+
+Session altered.
+
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> create or replace directory XMLDIR as '&dbhome_1\rdbms\xml';
+
+Directory created.
+
+SQL> create or replace directory XSDDIR as '&dbhome_1\rdbms\xml\schema';
+
+Directory created.
+
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> execute ORACLE_OCM.MGMT_CONFIG_UTL.create_replace_dir_obj;
+
+PL/SQL procedure successfully completed.
+
+SQL> execute dbms_qopatch.replace_logscrpt_dirs;
+
+PL/SQL procedure successfully completed.
+
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> set echo on
+SQL> spool &scripts_log\postScripts.log append
+SQL> grant sysdg to sysdg;
+
+Grant succeeded.
+
+SQL> grant sysbackup to sysbackup;
+
+Grant succeeded.
+
+SQL> grant syskm to syskm;
+
+Grant succeeded.
+
+SQL> @&scripts\lockAccount.sql
+SQL> SET VERIFY OFF
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> set echo on
+SQL> spool &scripts_log\lockAccount.log append

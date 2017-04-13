@@ -1,0 +1,19 @@
+### Ant Installer - properties auto generated on Thu\ Jul\ 21\ 09\:35\:54\ UTC\ 2016
+
+basedir = C\:\\xstoreinstall\\Tools\\genkeys\\.
+ant.install.config.version = 1.0
+
+
+## Properties from Page:intro
+
+## Properties from Page:install-directory
+# .DirectoryInput
+installDir = C\:\\xstore-genkeys
+# Targets selected for page
+install-directory-targets = install-genkeys,
+
+## Properties from Page:genkeys-settings
+# .UnvalidatedTextInput
+customerId.salt = DTV
+
+## Properties from Page:progress

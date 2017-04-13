@@ -1,0 +1,1071 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" dtype="Default" xsi:noNamespaceSchemaLocation="SystemConfig.xsd">
+  <RegisterConfig dtype="Default">
+    <RestrictSaleType dtype="String">NONE</RestrictSaleType>
+    <!-- The chain to run after a sale transaction is completed, suspended, or canceled. -->
+    <SaleEndingChain dtype="String">PRE_SALE_TRANSACTION</SaleEndingChain>
+    <!-- <SaleEndingChain dtype="String">REGISTER_LOGIN</SaleEndingChain> -->
+    <DualDisplay dtype="Default">
+      <EnableDualDisplay dtype="Boolean">false</EnableDualDisplay>
+    </DualDisplay>
+    <OpenClose dtype="Default">
+      <StartupApplication dtype="String">REGISTER</StartupApplication>
+      <AlwaysAuthenticateOnAppChange dtype="Boolean">false</AlwaysAuthenticateOnAppChange>
+      <AllowUserChangeBusinessDate dtype="Boolean">true</AllowUserChangeBusinessDate>
+      <AllowSameDayStoreReopen dtype="Boolean">true</AllowSameDayStoreReopen>
+      <AllowUnscheduledBusinessDateOpen dtype="Boolean">true</AllowUnscheduledBusinessDateOpen>
+      <CountTillsInClose dtype="Boolean">true</CountTillsInClose> 
+      <BlindWSOpenOnRtlLocOpen dtype="Boolean">false</BlindWSOpenOnRtlLocOpen>
+      <ForceCloseWSOnRtlLocClose dtype="Boolean">false</ForceCloseWSOnRtlLocClose>
+      <RunWSOpenOnRtlLocOpen dtype="Boolean">false</RunWSOpenOnRtlLocOpen>
+      <RequireWSClosed dtype="Boolean">true</RequireWSClosed>
+      <RtlLocCycleFromPrimaryWSOnly dtype="Boolean">false</RtlLocCycleFromPrimaryWSOnly>
+      <HaltApplicationOnRtlLocClose dtype="Boolean">false</HaltApplicationOnRtlLocClose>
+      <AllowRemoteWSClose dtype="Boolean">true</AllowRemoteWSClose>
+      <CreateRtlLocOpenTransaction dtype="Boolean">true</CreateRtlLocOpenTransaction>
+      <CreateRtlLocCloseTransaction dtype="Boolean">true</CreateRtlLocCloseTransaction>
+      <CreateWSOpenTransaction dtype="Boolean">true</CreateWSOpenTransaction>
+      <CreateWSCloseTransaction dtype="Boolean">true</CreateWSCloseTransaction>
+      <PromptWishToOpenQuestion dtype="Boolean">false</PromptWishToOpenQuestion>
+      <PromptWishToCloseQuestion dtype="Boolean">true</PromptWishToCloseQuestion>
+      <PromptToInitiateClose dtype="Boolean">false</PromptToInitiateClose>
+      <CaptureUserMsg dtype="Boolean">false</CaptureUserMsg>
+      <DisplayUserCapturedMsg dtype="Boolean">false</DisplayUserCapturedMsg>
+      <ListOpenWS dtype="Boolean">true</ListOpenWS>
+      <ProcessPayroll dtype="Boolean">false</ProcessPayroll>
+      <!-- AutoClockOutOnRtlLocClose available code
+      CLOCK_OUT_ALL, CLOCK_OUT_CURRENT_EMP, NONE -->
+      <AutoClockOutOnRtlLocClose dtype="String">CLOCK_OUT_ALL</AutoClockOutOnRtlLocClose>
+      <ValidateSuspendedTransactionsAtClose dtype="Boolean">false</ValidateSuspendedTransactionsAtClose>
+      <ValidateAnyEmployeeNotClockOutYet dtype="Boolean">false</ValidateAnyEmployeeNotClockOutYet>
+      <!-- For Register Accountability only, QuickTransferNoTillCount true:during store open and close, system doesn't prompt for till count assuming no cash invovle and move all tender amount from register/hand held to store bank. -->
+      <QuickTransferNoTillCount dtype="Boolean">true</QuickTransferNoTillCount>
+      <EndOfDayTimeCheckEnabled dtype="Boolean">false</EndOfDayTimeCheckEnabled>
+      <EndOfDayTime dtype="String">02:00</EndOfDayTime>
+    </OpenClose>
+    <Location dtype="Default">
+      <OnHandInventoryBucketId dtype="String">ON_HAND</OnHandInventoryBucketId>
+      <DefaultInventoryLocationId dtype="String">DEFAULT</DefaultInventoryLocationId>
+      <!-- OvertimeRuleType available: Please see PayrollOvertimeConfig -->
+      <OvertimeRuleType dtype="String">WEEKLYOVER40</OvertimeRuleType>
+    </Location>
+    <Terminal dtype="Default">
+      <PrimaryTerminalId dtype="String">0</PrimaryTerminalId>
+      <MenuButtonCount dtype="PositiveInteger">14</MenuButtonCount>
+      <RegistrationUpdateInterval dtype="PositiveInteger">15</RegistrationUpdateInterval>
+      <RegistrationHistoryDays dtype="PositiveInteger">3</RegistrationHistoryDays>
+    </Terminal>
+    <Browser dtype="Default">
+      <Debug dtype="Boolean">false</Debug>
+    </Browser>
+    <CommissionedAssociates dtype="Default">
+      <PromptForCommissionedAssociates dtype="Boolean">false</PromptForCommissionedAssociates>
+      <PromptPerItem dtype="Boolean">false</PromptPerItem>
+      <DisplayPerItemOnSale dtype="Boolean">false</DisplayPerItemOnSale>
+      <DisplayPerItemOnReturn dtype="Boolean">false</DisplayPerItemOnReturn>
+      <!-- Whether or not we prompt for commissioned associates as a multi-select list (true) or as a focus bar
+        (text) prompt (false).
+        Acceptable values: true/false -->
+      <PromptWithList dtype="Boolean">false</PromptWithList>
+      <DefaultCashierAsFirstCommissionedAssociate dtype="Boolean">true</DefaultCashierAsFirstCommissionedAssociate>
+      <AllowCashierAsCommissionedAssociate dtype="Boolean">false</AllowCashierAsCommissionedAssociate>
+      <!-- The default commission method.  Acceptable values are CURRENT_CASHIER or HOUSE_ACCOUNT.  Any other values
+           or no value will result in no commission being recorded.  This configuration only applies when prompting
+           for commissioned associates (PromptForCommissionedAssociates) is turned off (false). -->
+      <DefaultCommissionMethod dtype="String">CURRENT_CASHIER</DefaultCommissionMethod>
+      <MinCommissionedAssociatesAllowed dtype="PositiveInteger">1</MinCommissionedAssociatesAllowed>
+      <!-- The maximum number of commissioned associates allowed to be assigned to a sale. -->
+      <MaxCommissionedAssociatesAllowed dtype="PositiveInteger">1</MaxCommissionedAssociatesAllowed>
+      <RcptIncludeFirstName dtype="Boolean">true</RcptIncludeFirstName>
+      <RcptIncludeLastName dtype="Boolean">true</RcptIncludeLastName>
+      <RcptNewLineBetween dtype="Boolean">true</RcptNewLineBetween>
+    </CommissionedAssociates>
+  </RegisterConfig>
+  <SystemConfig dtype="Default">
+    <UserInterface dtype="Default">
+      <!-- VALUES:  LEFT, RIGHT -->
+      <UIOrientation dtype="String">RIGHT</UIOrientation>
+      <AllCapsButtons dtype="Boolean">false</AllCapsButtons>
+      <AllCapsListHeaders dtype="Boolean">true</AllCapsListHeaders>
+      <AllCapsTabHeaders dtype="Boolean">true</AllCapsTabHeaders>
+    </UserInterface>
+    <MeasurementUnits dtype="Default">
+      <!-- VALUES:  CELSIUS, FAHRENHEIT, KELVIN -->
+      <Temperature dtype="String">FAHRENHEIT</Temperature>
+      <!-- VALUES:  IMPERIAL, METRIC -->
+      <Length dtype="String">IMPERIAL</Length>
+    </MeasurementUnits>
+    <HideDeniedSecureOption dtype="Boolean">false</HideDeniedSecureOption>
+    <PrintStoreCopyWithSigCaptured dtype="Boolean">true</PrintStoreCopyWithSigCaptured>
+    <PrintCanceledTransactions dtype="Boolean">false</PrintCanceledTransactions>
+    <Help dtype="Default">
+      <HelpKey dtype="String"/>
+      <HelpFilePath dtype="Url">${user.dir}/res/html/help/</HelpFilePath>
+	  <!-- TXJ: Temporarily disable base help and replace with dummy funcion key -->
+      <HelpMenu dtype="String">ADMIN::HELP</HelpMenu>
+      <!-- <HelpMenu dtype="String">ADMIN::TJX_HELP</HelpMenu> -->
+    </Help>
+    <ProcessInventoryJournal dtype="Boolean">true</ProcessInventoryJournal>
+    <IncludeSalesTaxInGrossSales dtype="Boolean">true</IncludeSalesTaxInGrossSales>
+    <ExcludeVatFromNetSales dtype="Boolean">true</ExcludeVatFromNetSales>
+    <GrossSalesOptions dtype="Default">
+      <EnforceExcludeFromNetSalesFlag dtype="Boolean">true</EnforceExcludeFromNetSalesFlag>
+      <ExcludeReturns dtype="Boolean">false</ExcludeReturns>
+    </GrossSalesOptions>
+    <OneSequenceForAllCustAccounts dtype="Boolean">false</OneSequenceForAllCustAccounts>
+    <TrainingMode dtype="Default">
+      <TrainingModeEnabled dtype="Boolean">true</TrainingModeEnabled>
+      <TrainingModeRestrictEmployeeAccess dtype="Boolean">false</TrainingModeRestrictEmployeeAccess>
+      <TrainingModeRestrictReceiptPrinting dtype="Boolean">false</TrainingModeRestrictReceiptPrinting>
+      <TrainingModeRestrictEnterExitPrinting dtype="Boolean">true</TrainingModeRestrictEnterExitPrinting>
+      <TrainingModeProcessPosLog dtype="Boolean">true</TrainingModeProcessPosLog>
+      <TrainingModeRtlLocCloseFromPrimaryWSOnly dtype="Boolean">false</TrainingModeRtlLocCloseFromPrimaryWSOnly>
+    </TrainingMode>
+    <AutoLogout dtype="Default">
+      <Enabled dtype="Boolean">true</Enabled>
+	  <!-- TJX: CONF_TimeOut_006 -->
+      <WaitSeconds dtype="PositiveInteger">300</WaitSeconds>
+    </AutoLogout>
+    <TempTransactionFilePath dtype="String">tmp/</TempTransactionFilePath>
+    <DisplayVoidedLineItems dtype="Boolean">true</DisplayVoidedLineItems>
+    <LocalCurrencyId dtype="String">USD</LocalCurrencyId>
+    <LoginSecurity dtype="Default">
+      <IdType dtype="String">employee_id</IdType>
+      <PasswordHistoryLength dtype="PositiveInteger">4</PasswordHistoryLength>
+      <AccountLockout dtype="Default">
+        <Enabled dtype="Boolean">false</Enabled>
+        <Retries dtype="PositiveInteger">3</Retries>
+      </AccountLockout>
+      <PasswordExpiration dtype="Default">
+        <Enabled dtype="Boolean">false</Enabled>
+        <Days dtype="PositiveInteger">90</Days>
+      </PasswordExpiration>
+      <ChallengeQuestionsEnabled dtype="Boolean">false</ChallengeQuestionsEnabled>
+      <NumberOfChallengeQuestions dtype="Integer">3</NumberOfChallengeQuestions>
+      <ChallengeQuestionRetries dtype="Integer">3</ChallengeQuestionRetries>
+      
+      <!-- time interval in seconds to run the UnlockUserWorker -->
+      <UnlockUserRepeatInterval dtype="Integer">300</UnlockUserRepeatInterval>
+      
+      <!-- the elapse time in minutes from the locked_out_timestamp before unlocking the user -->
+      <LapseTimeBeforeUnlockingUser dtype="Integer">30</LapseTimeBeforeUnlockingUser>
+    </LoginSecurity>
+    <Email dtype="Default">
+      <!-- This needs to be modified to identify the email host of (usually) the home office. -->
+      <DefaultMailHost dtype="String">172.28.41.4</DefaultMailHost>
+      <DefaultMailPort dtype="PositiveInteger">25</DefaultMailPort>
+      <UseSmtpAuth dtype="Boolean">false</UseSmtpAuth>
+      <UseTLS dtype="Boolean">true</UseTLS>
+      <DefaultMailUser dtype="String"/>
+      <DefaultMailPassword dtype="String"/>
+      <SmtpDebug dtype="Boolean">false</SmtpDebug>
+      <DefaultSender dtype="String">test@email.com</DefaultSender>
+      <!-- This needs to be modified to reflect the valid email address of (usually) a store manager. -->
+      <DefaultRecipient dtype="String">storeManager@thisOrg.com</DefaultRecipient>
+      <!-- When UseTestingMode = true, only email addresses containing any of the strings in the comma-
+      separated value of TestingModeAddressFilter will be targeted for emails.  
+      When UseTestingMode = false, all emails will be delivered regardless of the target email address. -->
+      <UseTestingMode dtype="Boolean">true</UseTestingMode>
+      <TestingModeAddressFilter dtype="String">@oracle.com, @micros.com, @micros-retail.com, @micros-retail.at, @datavantagecorp.com</TestingModeAddressFilter>
+      <Receipt dtype="Default">
+        <SendEmailReceipts dtype="Boolean">false</SendEmailReceipts>
+        <AlwaysPromptToEmail dtype="Boolean">false</AlwaysPromptToEmail>
+        <SaveUpdatedEmailAddressToCustomer dtype="Boolean">true</SaveUpdatedEmailAddressToCustomer>
+        <Subject dtype="Translatable">_receiptEmailSubject</Subject>
+        <From dtype="String">store@xstore.com</From>
+        <LineStyle dtype="String">font-family:"Courier New", monospace; font-size:8pt</LineStyle>
+        <!-- <Watermark dtype="String">${user.dir}/res/graphics/receipt/watermark.bmp</Watermark> -->
+      </Receipt>
+    </Email>
+    <Transaction dtype="Default">
+      <PromptForCancelReasonCode dtype="Boolean">false</PromptForCancelReasonCode>
+      <DisplayFeesLine dtype="Boolean">true</DisplayFeesLine>
+      <CachePriceOfItemsAddedToTheTransaction dtype="Boolean">false</CachePriceOfItemsAddedToTheTransaction>
+    </Transaction>
+    <NoSale dtype="Default">
+      <ManualOpen dtype="Default">
+        <ReasonCode dtype="String">NSManual</ReasonCode>
+        <Notes dtype="String">User manually opened the cash drawer.</Notes>
+      </ManualOpen>
+    </NoSale>
+    <ItemSale dtype="Default">
+      <MinItemIdLength dtype="PositiveInteger">1</MinItemIdLength>
+      <MaxItemIdLength dtype="PositiveInteger">20</MaxItemIdLength>
+      <MinItemSerialLength dtype="PositiveInteger">8</MinItemSerialLength>
+      <MaxItemSerialLength dtype="PositiveInteger">20</MaxItemSerialLength>
+      <MaxItemPrice dtype="BigDecimal">9999.99</MaxItemPrice>
+      <UseItemTableAsPrimary dtype="Boolean">true</UseItemTableAsPrimary>
+      <AllowItemNotOnFile dtype="Boolean">false</AllowItemNotOnFile>
+      <NotifyForItemNotOnFile dtype="Boolean">false</NotifyForItemNotOnFile>
+      <ItemNotOnFileDefaultId dtype="String">051729</ItemNotOnFileDefaultId>
+      <PromptUserForSaleCompletion dtype="Boolean">false</PromptUserForSaleCompletion>
+      <RequireItemVoidReasonCode dtype="Boolean">false</RequireItemVoidReasonCode>
+      <PromptForBirthDate dtype="Boolean">false</PromptForBirthDate>
+    </ItemSale>
+    <TimeClock dtype="Default">
+      <ClockInNotRequiredOnCreateEmpFlag dtype="Boolean">false</ClockInNotRequiredOnCreateEmpFlag>
+      <ClockInRequiredForAuthorizationFlag dtype="Boolean">false</ClockInRequiredForAuthorizationFlag>
+    </TimeClock>
+    <EmployeeSale dtype="Default">
+      <AllowSelfSale dtype="Boolean">false</AllowSelfSale>
+    </EmployeeSale>
+    <DefaultIDType dtype="String">DRIVER_LICENSE</DefaultIDType>
+    <CheckTender dtype="Default">
+      <PromptForBirthday dtype="Boolean">false</PromptForBirthday>
+      <MinimumCheckNumber dtype="Integer">0</MinimumCheckNumber>
+    </CheckTender>
+    <CreditDebitTender dtype="Default">
+      <PinpadRequiredForDebit dtype="Boolean">true</PinpadRequiredForDebit>
+      <BINSmartLookup dtype="Default">
+        <Enabled dtype="Boolean">false</Enabled>
+        <AuthMethodCode dtype="String">XPAY_BINSMART_LOOKUP_MWHSE</AuthMethodCode>
+        <!-- PreferredDefaultOnError possible values: CREDIT, DEBIT -->
+        <PreferredDefaultOnError dtype="String">CREDIT</PreferredDefaultOnError>
+      </BINSmartLookup>
+      <NoSignatureRequiredMessageEnabled dtype="Boolean">true</NoSignatureRequiredMessageEnabled>
+      <ExportHashedAccountNumber dtype="Boolean">false</ExportHashedAccountNumber>
+    </CreditDebitTender>
+    <AccountsReceivable dtype="Default">
+      <PromptUserInfo dtype="Boolean">true</PromptUserInfo>
+      <!-- PromptUserInfoMethod possible values: PROMPT_NAME, PROMPT_ELEGIBLE_USERS_LIST -->
+      <PromptUserInfoMethod dtype="String">PROMPT_ELEGIBLE_USERS_LIST</PromptUserInfoMethod>
+      <ARTenderAmtOverAvailCreditLimitThreshold dtype="BigDecimal">1000</ARTenderAmtOverAvailCreditLimitThreshold>
+      <HomeOfficeManualAuthPhoneNumber dtype="String">1-800-444-9615</HomeOfficeManualAuthPhoneNumber>
+      <RequirePartyObjectForAllUsers dtype="Boolean">false</RequirePartyObjectForAllUsers>
+      <RequireARAcctOwnerAsscWithTrans dtype="Boolean">true</RequireARAcctOwnerAsscWithTrans>
+      <ShowOutstandingInvoicesForPayment dtype="Boolean">false</ShowOutstandingInvoicesForPayment>
+      <!-- PromptStatementDateAtPayment configuration only aoolies when ShowOutstandingInvoicesForPayment is turned off (false) -->
+      <PromptStatementDateAtPayment dtype="Boolean">true</PromptStatementDateAtPayment>
+      <!-- PromptInvoicesAtPayment configuration only aoolies when ShowOutstandingInvoicesForPayment is turned off (false) -->
+      <PromptInvoicesAtPayment dtype="Boolean">true</PromptInvoicesAtPayment>
+      <PromptManagerOverride dtype="Boolean">true</PromptManagerOverride>
+      <!-- The default credit limit amount that will be prompted when creating new house account-->
+      <DefaultAccountCreditLimit dtype="BigDecimal">1000</DefaultAccountCreditLimit>
+      <NumDaysToSearchPaymentsMade dtype="BigDecimal">365</NumDaysToSearchPaymentsMade>
+      <RequiredReversalPaymentReasonCode dtype="Boolean">true</RequiredReversalPaymentReasonCode>
+    </AccountsReceivable>
+    <GiftReceipt dtype="Default">
+      <!-- min value is 1 -->
+      <MaxPrintsBeforeManagerOverride dtype="Integer">1</MaxPrintsBeforeManagerOverride>
+      <MultipleQuantityPrintsMultipleGiftReceipts dtype="Boolean">true</MultipleQuantityPrintsMultipleGiftReceipts>
+      <PromptForMultipleGiftReceipts dtype="Boolean">true</PromptForMultipleGiftReceipts>
+      <PromptForGiftReceiptGrouping dtype="Boolean">true</PromptForGiftReceiptGrouping>
+    </GiftReceipt>
+    <ItemReturn dtype="Default">
+      <PromptForCustomer dtype="Boolean">false</PromptForCustomer>
+      <CustomerRecordRequired dtype="Boolean">false</CustomerRecordRequired>
+      <CreditCommissionedAsscMethod dtype="Default">
+        <!-- ORIGINAL_COMMISSIONED_ASSC, CURRENT_CASHIER, CURRENT_COMMISSIONED_ASSC, HOUSE_ACCOUNT -->
+        <CreditBlindReturnSaleCommissionMethod dtype="String">CURRENT_CASHIER</CreditBlindReturnSaleCommissionMethod>
+        <CreditUnverifiedReturnSaleCommissionMethod dtype="String">CURRENT_CASHIER</CreditUnverifiedReturnSaleCommissionMethod>
+        <CreditVerifiedReturnSaleCommissionMethod dtype="String">ORIGINAL_COMMISSIONED_ASSC</CreditVerifiedReturnSaleCommissionMethod>
+      </CreditCommissionedAsscMethod>
+      <AllowItemNotOnFileBlindReturn dtype="Boolean">false</AllowItemNotOnFileBlindReturn>
+      <AlwaysPromptForItemPriceUponUnverifiedReturn dtype="Boolean">false</AlwaysPromptForItemPriceUponUnverifiedReturn>
+      <AlwaysPromptForItemPriceUponBlindReturn dtype="Boolean">false</AlwaysPromptForItemPriceUponBlindReturn>
+      <PriceHistory dtype="Default">
+        <LookupPriceHistory dtype="Boolean">false</LookupPriceHistory>
+        <AutoCalculateHistoryPrice dtype="Boolean">false</AutoCalculateHistoryPrice>
+        <LookupVerifiedPriceHistory dtype="Boolean">false</LookupVerifiedPriceHistory>
+        <PriceHistoryLookupPreviousNumberOfDays dtype="PositiveInteger">30</PriceHistoryLookupPreviousNumberOfDays>
+      </PriceHistory>
+      <HouseAccountEmployeeId dtype="String">0</HouseAccountEmployeeId>
+      <RestockingFee dtype="Default">
+        <PromptApplyRestockingFeeMessage dtype="Boolean">false</PromptApplyRestockingFeeMessage>
+      </RestockingFee>
+      <ReturnVerification dtype="Default">
+        <ReturnVerificationRequired dtype="Boolean">true</ReturnVerificationRequired>
+      </ReturnVerification>
+      <CrossChannelReturnsEnabled dtype="Boolean">true</CrossChannelReturnsEnabled>
+      <CrossBorderReturnsEnabled dtype="Boolean">false</CrossBorderReturnsEnabled>
+      <MaxTotalTransactionRefundThreshold dtype="BigDecimal">999999.00</MaxTotalTransactionRefundThreshold>
+      <MinimumReturnItemPrice dtype="BigDecimal">0.01</MinimumReturnItemPrice>
+      <MaximumReturnItemPrice dtype="BigDecimal">9999.99</MaximumReturnItemPrice>
+      <MaxDaysAfterPurchase dtype="PositiveInteger">9999</MaxDaysAfterPurchase>
+      <ValidateReturnSerialNumberAgainstOriginalTrans dtype="Boolean">true</ValidateReturnSerialNumberAgainstOriginalTrans>
+      <PromptTndrAmtForOriginalCreditCardTender dtype="Boolean">true</PromptTndrAmtForOriginalCreditCardTender>
+      <Discounts dtype="Default">
+        <AllowDiscountsOnBlindReturn dtype="Boolean">true</AllowDiscountsOnBlindReturn>
+        <AllowDiscountsOnUnverifiedReturn dtype="Boolean">true</AllowDiscountsOnUnverifiedReturn>
+        <AllowDiscountsOnVerifiedReturn dtype="Boolean">false</AllowDiscountsOnVerifiedReturn>
+      </Discounts>
+      <!-- Valid values: DAY, MONTH -->
+      <ProrationTimeUnit dtype="String">DAY</ProrationTimeUnit>
+      <ProRatedDiscountReturnsDisabled dtype="Boolean">true</ProRatedDiscountReturnsDisabled>
+      <CustomerHistoryReturn dtype="Default">
+        <EnableCustomerHistoryLookup dtype="Boolean">false</EnableCustomerHistoryLookup>
+        <PromptBeforeNotInHistoryReturn dtype="Boolean">false</PromptBeforeNotInHistoryReturn>
+      </CustomerHistoryReturn>
+      <BlindReturns dtype="Default">
+        <AmountThresholdEnabled dtype="Boolean">false</AmountThresholdEnabled>
+        <AmountThreshold dtype="BigDecimal">0</AmountThreshold>
+        <LowestPriceReturnEnabled dtype="Boolean">false</LowestPriceReturnEnabled>
+      </BlindReturns>
+    </ItemReturn>
+    <ItemMessaging dtype="Default">
+      <DisplayMessage dtype="Boolean">false</DisplayMessage>
+      <ClearViewOnBlankMessage dtype="Boolean">false</ClearViewOnBlankMessage>
+      <StyleMessageSupersede dtype="Boolean">false</StyleMessageSupersede>
+      <DisplayMessageAsNotify dtype="Boolean">false</DisplayMessageAsNotify>
+      <DisplayOnSaleItem dtype="Boolean">false</DisplayOnSaleItem>
+      <DisplayOnSendItem dtype="Boolean">false</DisplayOnSendItem>
+      <DisplayOnReturnItem dtype="Boolean">false</DisplayOnReturnItem>
+      <MessageFilePath dtype="Url">${user.dir}/res/html/msgs/</MessageFilePath>
+      <DefaultMessageTitle dtype="String">_defaultItemMessageTitle</DefaultMessageTitle>
+      <!-- Tom - removed until we have a better icon to use -->
+      <!--<DefaultMessageIcon dtype="String"></DefaultMessageIcon> -->
+      <DefaultMessageURL dtype="String">_defaultItemMessage</DefaultMessageURL>
+      <InstructionalMsgIcon dtype="String">classpath:graphics/attention.gif</InstructionalMsgIcon>
+      <RegisterInstructionalMsgTitle dtype="String">_defaultItemMessageTitle</RegisterInstructionalMsgTitle>
+      <CompositeMessageImagePosition dtype="String">right</CompositeMessageImagePosition>
+    </ItemMessaging>
+    <AttachedItems dtype="Default">
+      <EnableAttachedItems dtype="Boolean">true</EnableAttachedItems>
+      <NotifyItemAdded dtype="Boolean">false</NotifyItemAdded>
+      <AddWithMessage dtype="Boolean">false</AddWithMessage>
+      <MessageTitle dtype="String">_associatedItemMsgTitle</MessageTitle>
+      <MessageKey dtype="String">_messageAssocItemAdded</MessageKey>
+      <!-- Tom - removed icon from use.  This can be put back in if we get
+      graphics to be used from the graphics designer
+      <MessageIcon dtype="String">classpath:graphics/customer.gif</MessageIcon> -->
+    </AttachedItems>
+    <PromptForCustomerOnLogin dtype="Boolean">false</PromptForCustomerOnLogin>
+    <CustomerRequiredOnLogin dtype="Boolean">false</CustomerRequiredOnLogin>
+    <AutoGenerateCustomerId dtype="Boolean">true</AutoGenerateCustomerId>
+    <AutoGenerateEmployeeId dtype="Boolean">false</AutoGenerateEmployeeId>
+    <ShowListsIfOne dtype="Boolean">true</ShowListsIfOne>
+    <ShowEmployeeListIfOne dtype="Boolean">false</ShowEmployeeListIfOne>
+    <ShowCustomerListIfOne dtype="Boolean">false</ShowCustomerListIfOne>
+    <ShowMicrButtonOnTransactionSearchForm dtype="Boolean">false</ShowMicrButtonOnTransactionSearchForm>
+    <ReturnToCustomerSearchAfterSave dtype="Boolean">false</ReturnToCustomerSearchAfterSave>
+    <CustomerHistoryAgeLimitDays dtype="Integer">365</CustomerHistoryAgeLimitDays>
+    <CustomerActivityStreamMaxItems dtype="Integer">50</CustomerActivityStreamMaxItems>
+    <ActivityStream dtype="Default">
+      <BirthDateReminderDays dtype="Integer">5</BirthDateReminderDays>
+      <AnniversaryDateReminderDays dtype="Integer">5</AnniversaryDateReminderDays>
+      <LoyaltyExpirationReminderDays dtype="Integer">30</LoyaltyExpirationReminderDays>
+    </ActivityStream>
+    <EnableMultipleCustomerAddresses dtype="Boolean">false</EnableMultipleCustomerAddresses>
+    <SuspendTransaction dtype="Default">
+      <PrintSuspendTransReceipt dtype="Boolean">true</PrintSuspendTransReceipt>
+      <AllowSuspendTransWithVerifiedReturn dtype="Boolean">false</AllowSuspendTransWithVerifiedReturn>
+    </SuspendTransaction>
+    <SalesGoal dtype="Default">
+      <NumberFutureGoalsToDisplay dtype="Integer">2</NumberFutureGoalsToDisplay>
+      <NumberCpltGoalsToDisplay dtype="Integer">2</NumberCpltGoalsToDisplay>
+    </SalesGoal>
+    <SendSale dtype="Default">
+      <CreateShippingDocument dtype="Boolean">false</CreateShippingDocument>
+      <AutoGenerateShippingFee dtype="Boolean">false</AutoGenerateShippingFee>
+      <ShipCalcType dtype="String">PER_TRANSACTION</ShipCalcType>
+      <GenerateWeightedShippingFee dtype="Boolean">false</GenerateWeightedShippingFee>
+      <CustomerIsDefaultDestination dtype="Boolean">true</CustomerIsDefaultDestination>      
+      <!-- Check SendTaxType for valid values (DESTINATION,SELLING,DEST_INSTATE -->
+      <SendTaxType dtype="String">DESTINATION</SendTaxType>
+      <UseThisStoreAsFailOverTaxRate dtype="Boolean">true</UseThisStoreAsFailOverTaxRate>
+      <DisplaySoldItemCount dtype="Boolean">true</DisplaySoldItemCount>
+      <PrintSendSaleMerchandiseTicketPerItem dtype="Boolean">true</PrintSendSaleMerchandiseTicketPerItem>
+      <UnverifiedReturnsPromptSendSale dtype="Boolean">false</UnverifiedReturnsPromptSendSale>
+    </SendSale>
+    <Layaway dtype="Default">
+      <!-- ApplyDealAtSetup: 
+          true = system only apply deals to layaway item at setup. The pickup price will be the same as setup.
+          false=system only apply deals to layawy item at pickup. -->
+      <ApplyDealAtSetup dtype="Boolean">true</ApplyDealAtSetup>
+      <AllowAddItemAfterSetup dtype="Boolean">false</AllowAddItemAfterSetup>
+      <!-- Valid options are SINGLE or MULTIPLE -->
+      <AccountType dtype="String">MULTIPLE</AccountType>
+      <AutoGenerateLayawayId dtype="Boolean">true</AutoGenerateLayawayId>
+      <AllowItemNotOnFileLayaway dtype="Boolean">false</AllowItemNotOnFileLayaway>
+      <MaxLayawayItems dtype="Integer">99</MaxLayawayItems>
+      <MinTotalItemPrice dtype="BigDecimal">50</MinTotalItemPrice>
+      <MinimumPaymentPctOfRecommended dtype="BigDecimal">75</MinimumPaymentPctOfRecommended>
+      <MinimumPaymentDollarAmount dtype="BigDecimal">5</MinimumPaymentDollarAmount>
+      <SkipSearchFormIfCustomer dtype="Boolean">true</SkipSearchFormIfCustomer>
+      <AllowOverpayment dtype="Boolean">true</AllowOverpayment>
+      <!-- setup fee type "TRANSACTION" or "ITEM" -->
+      <SetupFeeType dtype="String">ITEM</SetupFeeType>
+      <SetupFeeAmount dtype="BigDecimal">0</SetupFeeAmount>
+      <SetupFeePercentage dtype="BigDecimal">10</SetupFeePercentage>
+      <RefundSetupFeeOnCancel dtype="Boolean">true</RefundSetupFeeOnCancel>
+      <ChargeSetupFeeOnEdit dtype="Boolean">false</ChargeSetupFeeOnEdit>
+      <AddSetupFeeToLayawayAccount dtype="Boolean">true</AddSetupFeeToLayawayAccount>
+      <!-- deposit fee type "TRANSACTION" or "ITEM" -->
+      <DepositFeeType dtype="String">TRANSACTION</DepositFeeType>
+      <DepositFixedAmount dtype="BigDecimal">0</DepositFixedAmount>
+      <DepositPercentage dtype="BigDecimal">10</DepositPercentage>
+      <!-- TRANSACTION, PCT_TOTAL, or PCT_DELINQUENT -->
+      <DelinquencyFeeType dtype="String">TRANSACTION</DelinquencyFeeType>
+      <DelinquencyFeeAmount dtype="BigDecimal">5</DelinquencyFeeAmount>
+      <DelinquencyFeePercentage dtype="BigDecimal">2</DelinquencyFeePercentage>
+      <!-- restocking fee type "AMT" or "PCT" -->
+      <RestockingFeeType dtype="String">PCT</RestockingFeeType>
+      <RestockingFeeFixedAmount dtype="BigDecimal">0</RestockingFeeFixedAmount>
+      <RestockingFeePercentage dtype="BigDecimal">2.5</RestockingFeePercentage>
+      <BookAsSaleOnSetup dtype="Boolean">false</BookAsSaleOnSetup>
+      <AllowPartialPickups dtype="Boolean">true</AllowPartialPickups>
+      <AutoAdjustItemPriceAtPickup dtype="Boolean">false</AutoAdjustItemPriceAtPickup>
+      <PaymentPeriods dtype="Integer">4</PaymentPeriods>
+      <PaymentPeriodDaysLength dtype="Integer">7</PaymentPeriodDaysLength>
+      <PromptForPaymentPeriods dtype="Boolean">true</PromptForPaymentPeriods>
+      <PromptForPaymentPeriodDaysLength dtype="Boolean">false</PromptForPaymentPeriodDaysLength>
+      <PromptForPaymentScheduleChange dtype="Boolean">false</PromptForPaymentScheduleChange>
+      <DelinquentDaysAfterDue dtype="Integer">5</DelinquentDaysAfterDue>
+      <AllowNewLayawayWithDelinquentExisting dtype="Boolean">true</AllowNewLayawayWithDelinquentExisting>
+      <PrintLayawayOnlyReceipt dtype="Boolean">true</PrintLayawayOnlyReceipt>
+      <PrintLayawayMerchandiseTicket dtype="Boolean">true</PrintLayawayMerchandiseTicket>
+      <PrintLayawayMerchandiseTicketPerItem dtype="Boolean">false</PrintLayawayMerchandiseTicketPerItem>
+      <DisplayLayawayItemOnTransactionList dtype="Boolean">true</DisplayLayawayItemOnTransactionList>
+      <MinDaysBeforeEscrowAllowed dtype="Integer">90</MinDaysBeforeEscrowAllowed>
+      <AllowEscrowDayOfPayment dtype="Boolean">false</AllowEscrowDayOfPayment>
+    </Layaway>
+    <SpecialOrder dtype="Default">
+      <!-- ApplyDealAtSetup: 
+          true=system only apply deals to special order item at setup. The pickup price will be the same as setup.
+          false=system only apply deals to special order item at pickup. -->
+      <ApplyDealAtSetup dtype="Boolean">true</ApplyDealAtSetup>
+      <MinimalOrderMode dtype="Boolean">false</MinimalOrderMode>
+      <SpecOrderItemNotOnFileDefaultId dtype="String">999999066</SpecOrderItemNotOnFileDefaultId>
+      <AutoGenerateReceivingDoc dtype="Boolean">true</AutoGenerateReceivingDoc>
+      <AutoGenerateSpecOrderId dtype="Boolean">true</AutoGenerateSpecOrderId>
+      <AllowItemNotOnFileSpecOrder dtype="Boolean">false</AllowItemNotOnFileSpecOrder>
+      <MaxItems dtype="Integer">20</MaxItems>
+      <MinTotalItemPrice dtype="BigDecimal">400</MinTotalItemPrice>
+      <PromptForExpectedDate dtype="Boolean">true</PromptForExpectedDate>
+      <ForceStorePickup dtype="Boolean">false</ForceStorePickup>
+      <AllowPartialPickups dtype="Boolean">true</AllowPartialPickups>
+      <AutoAdjustItemPriceAtPickup dtype="Boolean">false</AutoAdjustItemPriceAtPickup>
+      <!-- service fee type "TRANSACTION" or "ITEM" -->
+      <ServiceFeeType dtype="String">ITEM</ServiceFeeType>
+      <ServiceFeeAmount dtype="BigDecimal">0</ServiceFeeAmount>
+      <ServiceFeePercentage dtype="BigDecimal">5</ServiceFeePercentage>
+      <!-- deposit fee type "TRANSACTION" or "ITEM" -->
+      <DepositFeeType dtype="String">TRANSACTION</DepositFeeType>
+      <DepositFixedAmount dtype="BigDecimal">0</DepositFixedAmount>
+      <DepositPercentage dtype="BigDecimal">10</DepositPercentage>
+      <ShipCalcType dtype="String">PER_TRANSACTION</ShipCalcType>      
+      <!-- restocking fee type "AMT" or "PCT" -->
+      <RestockingFeeType dtype="String">PCT</RestockingFeeType>
+      <RestockingFeeFixedAmount dtype="BigDecimal">0</RestockingFeeFixedAmount>
+      <RestockingFeePercentage dtype="BigDecimal">2.5</RestockingFeePercentage>
+      <BookAsSaleOnSetup dtype="Boolean">false</BookAsSaleOnSetup>
+      <MinDaysBeforeEscrowAllowed dtype="Integer">90</MinDaysBeforeEscrowAllowed>
+      <AllowEscrowDayOfPayment dtype="Boolean">false</AllowEscrowDayOfPayment>
+      <DisplaySoldItemCount dtype="Boolean">false</DisplaySoldItemCount>
+    </SpecialOrder>
+    <WorkOrder dtype="Default">
+      <BatchShipMode dtype="Boolean">false</BatchShipMode>
+      <UseCategoryServiceLocations dtype="Boolean">false</UseCategoryServiceLocations>
+      <DefaultLeadDays dtype="PositiveInteger">10</DefaultLeadDays>
+      <AutoGenerateWorkOrderId dtype="Boolean">true</AutoGenerateWorkOrderId>
+      <AllowMultipleItemsPerWorkOrder dtype="Boolean">true</AllowMultipleItemsPerWorkOrder>
+      <RequireDeposit dtype="Boolean">false</RequireDeposit>
+      <DepositPercentage dtype="BigDecimal">10</DepositPercentage>
+      <!-- ALWAYS - always prompt for serial number, even if item is not serialized, 
+           SERIALIZED - prompt only if item is serialized, 
+           SERIALIZEDDUMMY - prompt if item is serialized or a dummy sku -->
+      <WorkItemSerialPromptMethod dtype="String">SERIALIZED</WorkItemSerialPromptMethod>
+    </WorkOrder>
+    <Warranty dtype="Default">
+      <AutoGenerateWarrantyId dtype="Boolean">true</AutoGenerateWarrantyId>
+      <CustomerRecordRequired dtype="Boolean">true</CustomerRecordRequired>
+      <WarrantyCustomerRequired dtype="Boolean">true</WarrantyCustomerRequired>
+      <CustomerAcceptancePrompted dtype="Boolean">true</CustomerAcceptancePrompted>
+      <NotifyWhenAnyWarranty dtype="Boolean">true</NotifyWhenAnyWarranty>
+      <NotifyWhenNoWarranty dtype="Boolean">false</NotifyWhenNoWarranty>
+      <NotifyWhenOneWarranty dtype="Boolean">true</NotifyWhenOneWarranty>
+      <AllowWarrantyNotOnFile dtype="String">RETURN,WORK_ORDER</AllowWarrantyNotOnFile>
+      <SellWarrantyChains dtype="List">
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_CURRENT_TRANS_ITEM" value="_warrantyItemFromCurrentTransAction"/>
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_HISTORY_TRANS_ITEM" value="_warrantyItemFromHistoryTransAction"/>
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_RECEIPT_TRANS_ITEM" value="_warrantyItemFromReceiptTransAction"/>
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_MANUAL_ITEM" value="_warrantyItemOnManualAction"/>
+      </SellWarrantyChains>
+      <SellWarrantyGiftChains dtype="List">
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_HISTORY_TRANS_ITEM" value="_warrantyItemFromHistoryTransAction"/>
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_RECEIPT_TRANS_ITEM" value="_warrantyItemFromReceiptTransAction"/>
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_MANUAL_ITEM" value="_warrantyItemOnManualAction"/>
+      </SellWarrantyGiftChains>
+      <SellWarrantyRenewChains dtype="List">
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_HISTORY_TRANS_ITEM" value="_warrantyItemFromHistoryTransAction"/>
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_RECEIPT_TRANS_ITEM" value="_warrantyItemFromReceiptTransAction"/>
+        <Entry dtype="MapEntry" key="ADD_WARRANTIES_TO_MANUAL_ITEM" value="_warrantyItemOnManualAction"/>
+      </SellWarrantyRenewChains>
+    </Warranty>
+    <GiftRegistry dtype="Default">
+      <AutoTriggerGiftReceipts dtype="Boolean">true</AutoTriggerGiftReceipts>
+      <HidePurchasedQuantity dtype="Boolean">false</HidePurchasedQuantity>
+    </GiftRegistry>
+    <Shipping dtype="Default">
+      <DocumentAttentionDays dtype="PositiveInteger">30</DocumentAttentionDays>
+      <AllowForcedSku dtype="Boolean">true</AllowForcedSku>
+      <AutogenerateShippingDocumentId dtype="Boolean">true</AutogenerateShippingDocumentId>
+      <Label dtype="Default">
+        <UPS dtype="Default">
+          <ServiceEnabled dtype="Boolean">false</ServiceEnabled>
+          <ShipServiceURL dtype="String">https://wwwcie.ups.com/webservices/Ship</ShipServiceURL>
+          <TrackServiceURL dtype="String">https://wwwcie.ups.com/webservices/Track</TrackServiceURL>
+          <ServiceAccountNumber dtype="String">539E93</ServiceAccountNumber>
+          <ServiceAccessKey dtype="String">Pj4+MAAAAABpD49BiG8H7AwnZIlxOVyxMMUOBQIq2kudwGRzPA5bDQ==</ServiceAccessKey>
+          <ServiceName dtype="String">Pj4+MAAAAABeBg2aghHlsz94sdSFCS4U</ServiceName>
+          <ServicePwd dtype="String">Pj4+MAAAAAAw55rBUEYcb5n0NfoUBohx</ServicePwd>
+          <TransactionContext dtype="String">Xstore POS System</TransactionContext>
+          <!-- Accessable value is: nonvalidate and validate. nonvalidate means the request no address validation-->
+          <AddressValidation dtype="String">nonvalidate</AddressValidation>
+          <LabelImageFormat dtype="String">GIF</LabelImageFormat>
+          <LabelImageFormatDescription dtype="String">GIF</LabelImageFormatDescription>
+          <HttpUserAgent dtype="String">Mozilla/4.5</HttpUserAgent>
+          <!-- Package types. Values are: 01 = UPS Letter, 02 = Customer Supplied Package,
+          03 = Tube, 04 = PAK, 21 = UPS Express Box, 24 = UPS 25KG Box,
+          25 = UPS 10KG Box, 30 = Pallet, 2a = Small Express Box,
+          2b = Medium Express Box, 2c = Large Express Box.
+          Note: Only packaging type code 02 is applicable to Ground Freight Pricing-->
+          <PackageTypeCode dtype="String">02</PackageTypeCode>
+          <!--Package weight unit of measurement code. Codes are: LBS = Pounds, KGS = Kilograms.-->
+          <PackageWeightCode dtype="String">LBS</PackageWeightCode>
+          <PackageWeightCodeDescription dtype="String">Pounds</PackageWeightCodeDescription>
+          <!--Values are 01 = Transportation, 02 = Duties and Taxes-->
+          <PaymentTypeCode dtype="String">01</PaymentTypeCode>
+          <ShipmentDescription dtype="String">Xstore Store Shipment</ShipmentDescription>
+          <DefaultServiceCode dtype="String">03</DefaultServiceCode>
+        </UPS>
+        <FedEx dtype="Default">
+          <ServiceEnabled dtype="Boolean">false</ServiceEnabled>
+          <ShipServiceURL dtype="String">https://gatewaybeta.fedex.com:443/web-services</ShipServiceURL>
+          <TrackServiceURL dtype="String">https://gatewaybeta.fedex.com:443/web-services</TrackServiceURL>
+          <ServiceAccountNumber dtype="String">510088000</ServiceAccountNumber>
+          <ServiceAccessKey dtype="String">Pj4+MAAAAAA5Wy1iut+dcNjlPkcsrIkffSXCx4jpf8siCbPp/RC6/Q==</ServiceAccessKey>
+          <ServicePwd dtype="String">Pj4+MAAAAAANpN+K++1teaT9of5AB9QLB1DiDko4rI4cgnsPaebNLA==</ServicePwd>
+          <ServiceMeterNumber dtype="String">118546332</ServiceMeterNumber>
+          <TransactionContext dtype="String">Xstore POS System</TransactionContext>
+          <LabelImageFormat dtype="String">PNG</LabelImageFormat>
+          <PackageTypeCode dtype="String">YOUR_PACKAGING</PackageTypeCode>
+          <PackageWeightCode dtype="String">LB</PackageWeightCode>
+          <PaymentTypeCode dtype="String">SENDER</PaymentTypeCode>
+          <DefaultServiceCode dtype="String">GROUND_HOME_DELIVERY</DefaultServiceCode>
+        </FedEx>
+      </Label>
+    </Shipping>
+    <Receiving dtype="Default">
+      <DocumentAttentionDays dtype="PositiveInteger">30</DocumentAttentionDays>
+      <AllowForcedSku dtype="Boolean">true</AllowForcedSku>
+      <!-- valid values are AUTOGENERATED, ENTERED, or ANY -->
+      <ReceivingDocumentIdRule dtype="String">AUTOGENERATED</ReceivingDocumentIdRule>
+      <Blind dtype="Boolean">false</Blind>
+      <CartonListOnDocument dtype="Boolean">true</CartonListOnDocument>
+      <AllowReceiveDocInTotal dtype="Boolean">false</AllowReceiveDocInTotal>
+      <ValidateControlNumber dtype="Boolean">false</ValidateControlNumber>
+    </Receiving>
+    <MaximumKeyedCostThreshold dtype="BigDecimal">50.00</MaximumKeyedCostThreshold>
+    <ShelfLabelsItemTags dtype="Default">
+      <AllowNonMerchTickets dtype="Boolean">false</AllowNonMerchTickets>
+      <MaxQuantityPerLine dtype="Integer">10</MaxQuantityPerLine>
+      <SaveBatchPrompt dtype="Boolean">false</SaveBatchPrompt>
+    </ShelfLabelsItemTags>
+    <Tax dtype="Default">
+      <PromptForTaxChangeReason dtype="Boolean">false</PromptForTaxChangeReason>
+      <PromptForTaxExemptReason dtype="Boolean">true</PromptForTaxExemptReason>
+      <AllowExemptAllTaxLines dtype="Boolean">true</AllowExemptAllTaxLines>
+      <ChangeIndividualTaxLines dtype="Boolean">false</ChangeIndividualTaxLines>
+      <TaxGroupLines dtype="Integer">1</TaxGroupLines>
+      <CompoundTaxIncludeOtherCompTaxAmt dtype="Boolean">false</CompoundTaxIncludeOtherCompTaxAmt>
+      <EnableTaxCodeDisplayAndPrint dtype="Boolean">false</EnableTaxCodeDisplayAndPrint>
+    </Tax>
+    <TillAccountability dtype="Default">
+      <PromptToOpenStoreBankOnStoreOpen dtype="Boolean">false</PromptToOpenStoreBankOnStoreOpen>
+      <!-- Possible values): TOTAL_SHORT, DENOMINATION -->
+      <!-- TOTAL_SHORT: user enters total cash amount only
+           DENOMINATION: user enters denominated cash amounts -->
+      <StoreBankOpeningCountMethod dtype="String">DENOMINATION</StoreBankOpeningCountMethod>
+      <!-- Cash count entry method for an opening count. -->
+      <!-- Possible values): TOTAL_SHORT, DENOMINATION -->
+      <!-- TOTAL_SHORT: user enters total cash amount only
+           DENOMINATION: user enters denominated cash amounts -->
+      <StartTillCountMethod dtype="String">DENOMINATION</StartTillCountMethod>
+      <!-- Cash count entry method for a cash pickup. -->
+      <!-- Possible values): TOTAL_SHORT, DENOMINATION -->
+      <!-- TOTAL_SHORT: user enters total cash amount only (NOTE: this is
+                         really the only setting that makes sense here)
+           DENOMINATION: user enters denominated cash amounts -->
+      <TillPickupMethod dtype="String">TOTAL_SHORT</TillPickupMethod>
+      <!-- The cash amount that the system suggests should be left in the till
+           after a pickup is performed. -->
+      <CashTransferCountMethod dtype="String">TOTAL_SHORT</CashTransferCountMethod>
+      <StoreBankCashDepositCountMethod dtype="String">TOTAL_SHORT</StoreBankCashDepositCountMethod>
+      <SuggestedAfterCashPickUpAmtUponOverMax dtype="BigDecimal">200</SuggestedAfterCashPickUpAmtUponOverMax>
+      <PrintPickupTotalOnTillCountReceipt dtype="Boolean">true</PrintPickupTotalOnTillCountReceipt>
+      <!-- If true, a prompt will display indicating (a) that the till balanced,
+           or (b) the tenders that did not balance, with the latter being a Y/N
+           "Do you want to recount?" prompt.  If false, no prompt will be
+           displayed regardless of whether or not the till was balanced. -->
+      <DisplayMsgTillCountStatus dtype="Boolean">true</DisplayMsgTillCountStatus>
+      <!-- If true, then an open/close count will begin with the individual
+           count of the first tender group.  If false, then you will first be
+           presented the summary list of tenders and get to choose which one to
+           count first. -->
+      <InitialCountSummarySkipped dtype="Boolean">false</InitialCountSummarySkipped>
+      <!-- If the cash amount in the till is below this amount after a retail
+           transaction is completed, an acknowledge-only prompt will appear and
+           notify the user. -->
+      <MinimumCashInTill dtype="BigDecimal">-9999999.99</MinimumCashInTill>
+      <!-- START: Count summary display types -->
+      <!-- Possible values (in order of detail): MINIMUM, SIMPLE, DETAILED, FULL -->
+      <!-- MINIMUM: declared amount
+           SIMPLE: declared amount, system amount
+           DETAILED: declared amount, system amount, over/under amount
+           FULL: currently, same as DETAILED -->
+      <CountSummaryViewTypeMidDay dtype="String">DETAILED</CountSummaryViewTypeMidDay>
+      <CountSummaryViewTypeTillCount dtype="String">DETAILED</CountSummaryViewTypeTillCount>
+      <CountSummaryViewTypeCashPickup dtype="String">SIMPLE</CountSummaryViewTypeCashPickup>
+      <CountSummaryViewTypeReconcile dtype="String">DETAILED</CountSummaryViewTypeReconcile>
+      <CountSummaryViewTypeStartCount dtype="String">DETAILED</CountSummaryViewTypeStartCount>
+      <!-- END: Count summary display types -->
+      <!-- This is actually a configuration to control whether or not a bank deposit is required
+           at store closing.  However, since the configuration is likely overridden in many 
+           customer layers, the name of it cannot be changed to reflect its true purpose.  Hence, 
+           the existence of this comment to indicate it. -->
+      <StoreBankEndCountAtStoreCloseRequired dtype="Boolean">true</StoreBankEndCountAtStoreCloseRequired>
+      <!-- StoreBankEndCountAtStoreCloseMethod : only useful for register accountability mode
+            COMPLETE_DEPOSIT = deposit all tenders ever penny from the store bank to the bank institution.
+            REMAINING_CASH_PROMPT = prompt the user to enter the total cash NOT deposit to bank institution with a simple text prompt.
+            STOREBANK_COMPLETE_ENDCOUNT = brings up the entire store bank end count screen for all tendes. -->
+      <StoreBankEndCountAtStoreCloseMethod dtype="String">COMPLETE_DEPOSIT</StoreBankEndCountAtStoreCloseMethod>
+      <StoreBankDepositValidated dtype="Boolean">false</StoreBankDepositValidated>
+      <StoreBankDepositDiscrepancyAutoAdjusted dtype="Boolean">false</StoreBankDepositDiscrepancyAutoAdjusted>
+      <RecountCloseCountDiscrepancyOverThreshold dtype="Boolean">false</RecountCloseCountDiscrepancyOverThreshold>
+      <ValidateCashTenderGoNegative dtype="Boolean">false</ValidateCashTenderGoNegative>
+    </TillAccountability>
+    <Deals dtype="Default">
+      <!-- DisplayProportionDealAmt true: System proportionally break down the deal discount among the sale line items that belongs to this deal.
+           EX: BOGO deal "Buy X get X free" X is $20. When buy 2 X, system will display $10 for each item.
+           DisplayProportionDealAmt false: System display sale line item amount as it described in the deal.
+           EX: BOGO deal "Buy X get X free" X is $20. When buy 2 X, system will display $20 for first X and $0 for the second X.  -->
+      <DisplayProportionDealAmt dtype="Boolean">false</DisplayProportionDealAmt>
+      <DisplayNegative dtype="Boolean">false</DisplayNegative>
+    </Deals>
+    <Coupon dtype="Default">
+      <Serialized dtype="Default">
+        <PrefixLength dtype="Integer">5</PrefixLength>
+      </Serialized>
+    </Coupon>
+    <PostVoid dtype="Default">
+      <PromptForReason dtype="Boolean">false</PromptForReason>
+    </PostVoid>
+    <Scheduling dtype="Default">
+      <FutureSchedulingWeeks dtype="Integer">6</FutureSchedulingWeeks>
+      <TimeOff dtype="Default">
+        <FutureTimeOffWeeks dtype="Integer">8</FutureTimeOffWeeks>
+        <PastTimeOffWeeks dtype="Integer">4</PastTimeOffWeeks>
+      </TimeOff>
+    </Scheduling>
+    <Timecard dtype="Default">
+      <!-- Active employee list sort types: LAST_NAME, DEPARTMENT_ID, EMPLOYEE_ID -->
+      <DefaultActiveEmployeeListSortType dtype="String">LAST_NAME</DefaultActiveEmployeeListSortType>
+      <Exception dtype="Default">
+        <TimecardHourGreaterThanHours dtype="Integer">10</TimecardHourGreaterThanHours>
+        <TimecardHourLessThanHours dtype="Integer">1</TimecardHourLessThanHours>
+      </Exception>
+      <PrintAcceptanceForm dtype="Boolean">true</PrintAcceptanceForm>
+      <DisplayDeletedTimecardEntry dtype="Boolean">true</DisplayDeletedTimecardEntry>
+      <AllowFutureTimecardEntry dtype="Boolean">true</AllowFutureTimecardEntry>
+      <!-- TimecardEntrysRoundingMinutes values: 15, NONE -->
+      <TimecardEntryRoundingMinutes dtype="String">NONE</TimecardEntryRoundingMinutes>
+    </Timecard>
+    <DefaultEmployeeGroup dtype="String">EVERYONE</DefaultEmployeeGroup>
+    <ItemLookup dtype="Default">
+      <PriceHistoryDays dtype="PositiveInteger">30</PriceHistoryDays>
+      <LoadUpcs dtype="Boolean">true</LoadUpcs>
+      <LoadSimilar dtype="Boolean">true</LoadSimilar>
+      <LoadSubstitute dtype="Boolean">true</LoadSubstitute>
+      <LoadPriceHistory dtype="Boolean">true</LoadPriceHistory>
+      <LoadSalesHistory dtype="Boolean">true</LoadSalesHistory>
+      <LoadGrid dtype="Boolean">true</LoadGrid>
+      <SalesHistoryWeeks dtype="PositiveInteger">12</SalesHistoryWeeks>
+      <ShowAdvancedSearchForm dtype="Boolean">false</ShowAdvancedSearchForm>
+    </ItemLookup>
+    <Payroll dtype="Default">
+      <!-- PayrollHoursRoundingMinutes values: 15, 30, 60, NONE -->
+      <PayrollHoursRoundingMinutes dtype="String">15</PayrollHoursRoundingMinutes>
+      <PostPayroll dtype="Default">
+        <EnforcePostPayrollDateTime dtype="Boolean">false</EnforcePostPayrollDateTime>
+        <!-- PayrollPostDay SUN=1, SAT=7, FRI=6, THU=5, WED=4, TUE=3, MON=2 -->
+        <PayrollPostDay dtype="Integer">1</PayrollPostDay>
+        <!-- PayrollPostTime format hh:mm (millitary time) -->
+        <PayrollPostTime dtype="String">12:00</PayrollPostTime>
+        <DisplayPayrollNotYetPostMsgAtLoginIfPassPostDay dtype="Boolean">true</DisplayPayrollNotYetPostMsgAtLoginIfPassPostDay>
+        <OnlyWriteHourlyPayStatusEmpInPayrollLog dtype="Boolean">true</OnlyWriteHourlyPayStatusEmpInPayrollLog>
+        <AllowAutoPostWithError dtype="Boolean">true</AllowAutoPostWithError>
+      </PostPayroll>
+      <PayrollCalendar dtype="Default">
+        <DisplayNumberOfPreviousWeek dtype="Integer">10</DisplayNumberOfPreviousWeek>
+        <DisplayNumberOfPreviousWeekinReport dtype="Integer">20</DisplayNumberOfPreviousWeekinReport>
+      </PayrollCalendar>
+      <AllowRepostingPayroll dtype="Boolean">true</AllowRepostingPayroll>
+      <MaxDailyTotalPayrollHours dtype="BigDecimal">24.0</MaxDailyTotalPayrollHours>
+      <ReviewPayrollRequired dtype="Boolean">true</ReviewPayrollRequired>
+      <AllowPostPayrollPerEmployee dtype="Boolean">true</AllowPostPayrollPerEmployee>
+      <!-- BasicCalendarPayrollWeekendingDay SUN=1, SAT=7, FRI=6, THU=5, WED=4, TUE=3, MON=2 -->
+      <BasicCalendarPayrollWeekendingDay dtype="Integer">7</BasicCalendarPayrollWeekendingDay>
+      <MaxAssociateAdvanceAmount dtype="BigDecimal">999.99</MaxAssociateAdvanceAmount>
+      <IsRegularPayrollHoursFromTimeCard dtype="Boolean">true</IsRegularPayrollHoursFromTimeCard>
+      <AssocAdvanceAuthNumber dtype="Boolean">false</AssocAdvanceAuthNumber>
+      <AllowFuturePayrollEntry dtype="Boolean">true</AllowFuturePayrollEntry>
+      <AssocAdvanceRepaymentAmount dtype="Boolean">false</AssocAdvanceRepaymentAmount>
+    </Payroll>    
+    <MixedTransactionSettings dtype="Default">
+      <AllowNegativeTotalInExchangeTransaction dtype="Boolean">true</AllowNegativeTotalInExchangeTransaction>
+      <!-- Assiging a value which is less than or equal to zero will disable the mixing rule below. -->
+      <MaximumAllowedTotal dtype="BigDecimal">0</MaximumAllowedTotal>
+      <AllowSaleItemTypeInMixedTransaction dtype="Default">
+        <!-- What this section really means is the inverse of "Must this item type be exclusive in a 
+             transaction?" For example, if SALE is set to false, then SALE type items only can be 
+             added to transactions with no items or with other SALE type items. -->
+        <SALE dtype="Boolean">true</SALE>
+        <RETURN dtype="Boolean">true</RETURN>
+        <LAYAWAY dtype="Boolean">true</LAYAWAY>
+        <SPECIALORDER dtype="Boolean">true</SPECIALORDER>
+        <ORDER dtype="Boolean">false</ORDER>
+        <SENDSALE dtype="Boolean">true</SENDSALE>
+        <WORKORDER dtype="Boolean">true</WORKORDER>
+      </AllowSaleItemTypeInMixedTransaction>
+    </MixedTransactionSettings>
+    <Tlog dtype="Default">
+      <LineItemComparator dtype="Class">dtv.pos.common.DefaultLineOrderComparator</LineItemComparator>
+      <GenerateTLog dtype="Boolean">true</GenerateTLog>
+      <MarkAsPostedImmediately dtype="Boolean">true</MarkAsPostedImmediately>
+    </Tlog>
+    <PromptUserOnChangeItem dtype="Boolean">false</PromptUserOnChangeItem>
+    <RainCheck dtype="Default">
+      <FeatureEnabled dtype="Boolean">false</FeatureEnabled>
+      <ExpirationDays dtype="PositiveInteger">30</ExpirationDays>
+      <RedeemAnyStore dtype="Boolean">false</RedeemAnyStore>
+      <QuantityLimit dtype="BigDecimal">1</QuantityLimit>
+    </RainCheck>
+    <Tender dtype="Default">
+      <ManualEnteredCreditCardImprint dtype="Boolean">false</ManualEnteredCreditCardImprint>
+      <BlindCouponTenderId dtype="String">COUPON</BlindCouponTenderId>
+      <!-- If for some reason the system cannot find the valid change tender, use this default change tender id -->
+      <DefaultChangeTenderIdIfNoneFound dtype="String">ISSUE_XPAY_GIFT_CARD</DefaultChangeTenderIdIfNoneFound>
+      <CashSuggestionButtonsEnabled dtype="Boolean">true</CashSuggestionButtonsEnabled>
+      <CashSuggestionButtonsMinDenominationFactor dtype="BigDecimal">1</CashSuggestionButtonsMinDenominationFactor>
+    </Tender>
+    <CurrencyRounding dtype="Default">
+      <RoundingMode dtype="String">HALF_UP</RoundingMode>
+      <CashTotalDisplay dtype="Boolean">false</CashTotalDisplay>
+      <ApplyTenderRoundingAsDiscount dtype="Boolean">false</ApplyTenderRoundingAsDiscount>
+    </CurrencyRounding>
+    <OpeningTasks dtype="Default">
+      <StartingTask dtype="String">OPEN</StartingTask>
+      <StartingStatuses dtype="String">RUN</StartingStatuses>
+      <EndingTask dtype="String">OPEN</EndingTask>
+      <EndingStatuses dtype="String">SUCCESS,WARNING</EndingStatuses>
+    </OpeningTasks>
+    <ClosingTasks dtype="Default">
+      <StartingTask dtype="String">CLOSING</StartingTask>
+      <StartingStatuses dtype="String">RUN</StartingStatuses>
+      <EndingTask dtype="String">CLOSING</EndingTask>
+      <EndingStatuses dtype="String">SUCCESS,WARNING</EndingStatuses>
+    </ClosingTasks>
+    <IncludeEmployeeInDefaultGroup dtype="Boolean">false</IncludeEmployeeInDefaultGroup>
+    <Inventory dtype="Default">
+      <PromptForQuantityOnItemScan dtype="Boolean">false</PromptForQuantityOnItemScan>
+      <PromptForQuantityOnItemKey dtype="Boolean">false</PromptForQuantityOnItemKey>
+    </Inventory>
+    <InventoryCount dtype="Default">
+      <EnableCountSheetMode dtype="Boolean">true</EnableCountSheetMode>
+      <PhysicalCount dtype="Default">
+        <AllowCreate dtype="Boolean">true</AllowCreate>
+        <AllowSearchable dtype="Boolean">true</AllowSearchable>
+        <AutoRecountUnmatchedItems dtype="Boolean">true</AutoRecountUnmatchedItems>
+        <MaximumCountCycles dtype="Integer">4</MaximumCountCycles>
+      </PhysicalCount>
+      <CycleCount dtype="Default">
+        <AllowCreate dtype="Boolean">true</AllowCreate>
+        <AllowSearchable dtype="Boolean">true</AllowSearchable>
+        <AutoRecountUnmatchedItems dtype="Boolean">true</AutoRecountUnmatchedItems>
+        <MaximumCountCycles dtype="Integer">4</MaximumCountCycles>
+        <InventoryBucket dtype="String">ON_HAND</InventoryBucket>
+      </CycleCount>
+      <SupplyCount dtype="Default">
+        <AllowCreate dtype="Boolean">true</AllowCreate>
+        <AllowSearchable dtype="Boolean">true</AllowSearchable>
+        <AutoRecountUnmatchedItems dtype="Boolean">true</AutoRecountUnmatchedItems>
+        <MaximumCountCycles dtype="Integer">4</MaximumCountCycles>
+        <InventoryBucket dtype="String">ON_HAND</InventoryBucket>
+        <MerchLevelForCount dtype="String">SUPPLIES</MerchLevelForCount>
+      </SupplyCount>
+      <ValidateSectionExistsForBucket dtype="Boolean">false</ValidateSectionExistsForBucket>
+      <ItemsPerCountSheetPage dtype="Integer">30</ItemsPerCountSheetPage>
+      <ItemsPerCountSheetSecondary dtype="Integer">200</ItemsPerCountSheetSecondary>
+      <RequirePrintedCountSheet dtype="Boolean">false</RequirePrintedCountSheet>
+      <AllowEnterCountsBeforeInitiating dtype="Boolean">true</AllowEnterCountsBeforeInitiating>
+      <DaysBeforeBeginDateInitiateAllowed dtype="Integer">3</DaysBeforeBeginDateInitiateAllowed>
+      <DaysAfterBeginDateInitiateAllowed dtype="Integer">1</DaysAfterBeginDateInitiateAllowed>
+      <EnforceInitiateCountDate dtype="Boolean">true</EnforceInitiateCountDate>
+      <BlankLinesPerPrintedCountSheet dtype="Integer">10</BlankLinesPerPrintedCountSheet>
+      <PrintBlankLinesAfterPrimaryCycle dtype="Boolean">false</PrintBlankLinesAfterPrimaryCycle>
+    </InventoryCount>
+    <Discounts dtype="Default">
+      <!-- Use values from java.math.RoundingMode -->
+      <RoundingMode dtype="String">HALF_DOWN</RoundingMode>
+    </Discounts>
+    <LineItemDiscount dtype="Default">
+      <LineDiscountUseConfiguredScale dtype="Boolean">false</LineDiscountUseConfiguredScale>
+      <!-- only used if UseDefaultPrecisionForLineDiscounts is ON -->
+      <LineDiscountPrecision dtype="Integer">3</LineDiscountPrecision>      
+    <!-- The thresholds establish maximum allowable operator discounting; beyond these --> 
+      <!-- thresholds, the DISCOUNT_EXCEED_MAX_THRESHOLD privilege is activated. Thresholds -->
+      <!-- not applied unless Enabled is true.  -->
+      <DiscountThreshold dtype="Default">
+        <Enabled dtype="Boolean">false</Enabled>
+        <Amount dtype="BigDecimal">999999.99</Amount>
+        <Percent dtype="Integer">101</Percent>
+      </DiscountThreshold>
+    </LineItemDiscount>
+    <GroupDiscount dtype="Default">
+      <ConfirmItemVoid dtype="Boolean">true</ConfirmItemVoid>
+      <MinItemsRequired dtype="Integer">2</MinItemsRequired>
+    </GroupDiscount>
+    <YouSavedMessage dtype="Default">
+      <ShowYouSavedMessage dtype="Boolean">true</ShowYouSavedMessage>
+      <MinYouSavedMessageThresholdAmount dtype="BigDecimal">0.01</MinYouSavedMessageThresholdAmount>
+    </YouSavedMessage>
+    <!-- IrsIdentificationNumber  should be overrided at the chain level, used to identify this merchant to the IRS -->
+    <IrsIdentificationNumber dtype="String">EIN 75-2080834</IrsIdentificationNumber>
+    <CashPaymentRequiringIrsReport dtype="BigDecimal">9999999.99</CashPaymentRequiringIrsReport>
+    <NonMerchItemTypes dtype="Default">
+      <IncludeItemCounts dtype="String">VOUCHER,LOYALTY_CARD</IncludeItemCounts>
+    </NonMerchItemTypes>
+    <Document dtype="Default">
+      <SeriesIdStartingIndexInDocId dtype="Integer">0</SeriesIdStartingIndexInDocId>
+      <SeriesIdLength dtype="Integer">4</SeriesIdLength>
+    </Document>
+    <TenderExchange dtype="Default">
+      <AllowMultipleIncomingTenders dtype="Boolean">false</AllowMultipleIncomingTenders>
+      <AllowMultipleOutgoingTenders dtype="Boolean">false</AllowMultipleOutgoingTenders>
+    </TenderExchange>
+    <EmployeeSearchCurrentLocationOnly dtype="Boolean">true</EmployeeSearchCurrentLocationOnly>
+    <CriteriaRequiredForEmployeeSearch dtype="Boolean">true</CriteriaRequiredForEmployeeSearch>
+    <MinimumEmployeeIdLength dtype="Integer">4</MinimumEmployeeIdLength>
+    <MaximumEmployeeIdLength dtype="Integer">20</MaximumEmployeeIdLength>
+    <DatabaseTranslationsEnabled dtype="Boolean">true</DatabaseTranslationsEnabled>
+    <LocationBasedInventory dtype="Default">
+      <LocationDisablingAllowed dtype="Boolean">true</LocationDisablingAllowed>
+      <NotifySummaryCountDiscrepancy dtype="Boolean">true</NotifySummaryCountDiscrepancy>
+      <ItemNotInSourceTransferAllowed dtype="Boolean">true</ItemNotInSourceTransferAllowed>
+      <PromptItemTransferReason dtype="Boolean">false</PromptItemTransferReason>
+      <InventoryValueTrackingMethod dtype="String">RETAIL</InventoryValueTrackingMethod>
+      <PromptForReceivingLocation dtype="Boolean">false</PromptForReceivingLocation>
+      <AutoReceiveLocationBasedOnDocConfig dtype="Boolean">true</AutoReceiveLocationBasedOnDocConfig>
+      <InventoryLocationPromptMethod dtype="String">NEVER</InventoryLocationPromptMethod>
+      <CheckItemQuantity dtype="Boolean">true</CheckItemQuantity>
+      <!-- VALUES: ALLOW, PROHIBIT, OVERRIDE -->
+      <QuantityUnavailableAction dtype="String">OVERRIDE</QuantityUnavailableAction>
+      <DisplayOnlyLocationsWithNonZeroQuantity dtype="Boolean">false</DisplayOnlyLocationsWithNonZeroQuantity>
+      <ValidateSerialNumber dtype="Boolean">true</ValidateSerialNumber>
+      <PrintSoldFromInventoryLocationOnReceipt dtype="Boolean">false</PrintSoldFromInventoryLocationOnReceipt>
+      <PrintMovementPendingReconciliationReport dtype="Boolean">true</PrintMovementPendingReconciliationReport>
+      <PrintItemTransferReport dtype="Boolean">true</PrintItemTransferReport>
+    </LocationBasedInventory>
+    <MaximumKeyedQuantityThreshold dtype="BigDecimal">50</MaximumKeyedQuantityThreshold>
+    <DefaultItemMaxSaleUnitCount dtype="BigDecimal">-1</DefaultItemMaxSaleUnitCount>
+    <MerchHierarchy dtype="Default">
+      <NumberOfLevels dtype="Integer">4</NumberOfLevels>
+      <Level1Code dtype="String">DEPARTMENT</Level1Code>
+      <Level2Code dtype="String">SUBDEPARTMENT</Level2Code>
+      <Level3Code dtype="String">CLASS</Level3Code>
+      <Level4Code dtype="String">SUBCLASS</Level4Code>
+    </MerchHierarchy>
+    <!-- CREDITCARD, MASK_LAST_4 -->
+    <VoucherNumberMask dtype="String">CREDITCARD</VoucherNumberMask>
+    <ErrorScreen dtype="Default">
+      <AutoGenerateErrorNotification dtype="Boolean">false</AutoGenerateErrorNotification>
+      <EmailAddressFrom dtype="String">XstoreErrorReporting</EmailAddressFrom>
+      <EmailAddressTo dtype="String"/>
+    </ErrorScreen>
+    <Replenishment dtype="Default">
+      <ConfirmQuantityThreshold dtype="BigDecimal">3000</ConfirmQuantityThreshold>
+    </Replenishment>
+    <Kits dtype="Default">
+      <PromptKitComponentsAtReturn dtype="Boolean">true</PromptKitComponentsAtReturn>
+      <LinkComponentQtyToKitQty dtype="Boolean">true</LinkComponentQtyToKitQty>
+      <NumKitComponentsToDisplay dtype="Integer">5</NumKitComponentsToDisplay>
+      <InventoryKitComponents dtype="Boolean">true</InventoryKitComponents>
+    </Kits>
+    <AllowEqualSecurityRankAccess dtype="Boolean">true</AllowEqualSecurityRankAccess>
+    <SSLCertificateCheck dtype="Default">
+      <Enabled dtype="Boolean">false</Enabled>
+      <MaxDays dtype="Integer">14</MaxDays>
+    </SSLCertificateCheck>
+    <ItemMatrix dtype="Default">
+      <Width dtype="Integer">4</Width>
+      <Height dtype="Integer">4</Height>
+      <CacheEnabled dtype="Boolean">true</CacheEnabled>
+    </ItemMatrix>
+    <AssociateTasks dtype="Default">
+      <TabRefreshSeconds dtype="PositiveInteger">600</TabRefreshSeconds>
+      <PreviousDaysAge dtype="PositiveInteger">30</PreviousDaysAge>
+      <FutureDaysAge dtype="PositiveInteger">30</FutureDaysAge>
+    </AssociateTasks>
+    <EnableCustomerWishList dtype="Boolean">false</EnableCustomerWishList>
+    <OnScreenKeyboard dtype="Default">
+      <Enabled dtype="Boolean">false</Enabled>
+      <Layout dtype="String">qwerty</Layout>
+      <AutomaticCall dtype="Boolean">false</AutomaticCall>
+      <AutomaticCallDecimal dtype="Boolean">true</AutomaticCallDecimal>
+      <Sliding dtype="Boolean">true</Sliding>
+      <SlidingEndBump dtype="Boolean">true</SlidingEndBump>
+      <SwipeDownToClose dtype="Boolean">true</SwipeDownToClose>
+      <SwipeSideToSwitchLayout dtype="Boolean">true</SwipeSideToSwitchLayout>
+      <KeyClickEnabled dtype="Boolean">true</KeyClickEnabled>
+      <KeyClickFrequency dtype="PositiveInteger">1300</KeyClickFrequency>
+      <KeyClickDuration dtype="PositiveInteger">15</KeyClickDuration>
+      <KeyClickVolume dtype="PositiveInteger">20</KeyClickVolume>
+    </OnScreenKeyboard>
+    <TouchConfiguration dtype="Default">
+      <StoreSwipeLoginToShowDashboard dtype="Boolean">false</StoreSwipeLoginToShowDashboard>
+      <EnableTapActionSound dtype="Boolean">true</EnableTapActionSound>
+    </TouchConfiguration>
+    <Charity dtype="Default">
+      <EnableDonation dtype="Boolean">false</EnableDonation>
+      <CharitableCompanyName dtype="Translatable">_charitableCompanyName</CharitableCompanyName>
+      <DonationDefaultNonMerchItemId dtype="String">9999981</DonationDefaultNonMerchItemId>
+      <MinimumRoundUpDonationThreshold dtype="BigDecimal">0.05</MinimumRoundUpDonationThreshold>
+      <DefaultRoundUpValue dtype="BigDecimal">1</DefaultRoundUpValue>
+      <AllowPromptNotificationWhenDonationItemVoided dtype="Boolean">true</AllowPromptNotificationWhenDonationItemVoided>
+      <AllowDonationLineItemOnReceipts dtype="Boolean">true</AllowDonationLineItemOnReceipts>
+      <AllowDonationFooterMessageOnReceipts dtype="Boolean">true</AllowDonationFooterMessageOnReceipts>
+      <AllowReturnDonationItems dtype="Boolean">false</AllowReturnDonationItems>
+    </Charity>
+    <Weather dtype="Default">
+      <UpdateIfDataIsOlderThanMinutes dtype="PositiveInteger">60</UpdateIfDataIsOlderThanMinutes>
+    </Weather>
+    <RequestCustomerBirthYear dtype="Boolean">false</RequestCustomerBirthYear>
+    <QuickItems dtype="Default">
+      <TabWidth dtype="Integer">4</TabWidth>
+      <TabHeight dtype="Integer">4</TabHeight>
+    </QuickItems>
+    <Twitter dtype="Default">
+      <!-- FOLLOW_ACCOUNT, HOME_TIMELINE -->
+      <Mode dtype="String">FOLLOW_ACCOUNT</Mode>
+      <FollowAccount dtype="String">microsretail</FollowAccount>
+      <Credentials dtype="Default">
+        <RestBaseURL dtype="String">https://api.twitter.com/1.1/</RestBaseURL>
+        <StreamBaseURL dtype="String">https://stream.twitter.com/1.1/</StreamBaseURL>
+        <SiteStreamBaseURL dtype="String">https://sitestream.twitter.com/1.1/</SiteStreamBaseURL>
+        <UserStreamBaseURL dtype="String">https://userstream.twitter.com/1.1/</UserStreamBaseURL>
+        <OauthRequestTokenURL dtype="String">https://api.twitter.com/oauth/request_token</OauthRequestTokenURL>
+        <OauthAccessTokenURL dtype="String">https://api.twitter.com/oauth/access_token</OauthAccessTokenURL>
+        <OauthAthorizationURL dtype="String">https://api.twitter.com/oauth/authorize</OauthAthorizationURL>
+        <OauthAuthenticationURL dtype="String">https://api.twitter.com/oauth/authenticate</OauthAuthenticationURL>
+        <ConsumerKey dtype="String">6f4NuwCadwAQdwuuunwS7Q</ConsumerKey>
+        <ConsumerSecret dtype="String">xTfzZZpyIPsLqxlgyE5yETfGM4YcvnuW8Q19X17h8b0</ConsumerSecret>
+        <AccessToken dtype="String">1543907833-sMEgoKmRAnUbPIC3MdQ0EQ8LaItAg97u6QUcex3</AccessToken>
+        <AccessTokenSecret dtype="String">eIMABbsILrJGMg6SnZEzLV3Ae66Y7n1CaKzLmr4Co</AccessTokenSecret>
+      </Credentials>
+    </Twitter>
+    <PayPal dtype="Default">
+      <Version dtype="String">98</Version>
+      <MobileCheckIn dtype="Default">
+        <TabWidth dtype="Integer">2</TabWidth>
+        <TabHeight dtype="Integer">2</TabHeight>
+        <!-- VALID IMAGE SIZES -->
+        <!-- 96X96, 200X200, 640X480, 100X75, 70X70, 150X150, 200X150, 310X90, 42X42, 125X125, 400X300, 80X80, 85X85, 650X412 -->
+        <PreferredPayPalCheckInImageSize dtype="String">200X200</PreferredPayPalCheckInImageSize>
+        <EnablePayPalCheckInPollingService dtype="Boolean">true</EnablePayPalCheckInPollingService>
+        <!-- Time interval for PayPal polling calls -->
+        <PayPalCheckInStatusRequestInterval dtype="Integer">30</PayPalCheckInStatusRequestInterval>
+      </MobileCheckIn>
+    </PayPal>
+    <EnableAirside dtype="Boolean">false</EnableAirside>
+    <Items dtype="Default">
+      <!-- This is only for XstoreMobile (...for now).  See metadata for details. -->
+      <ShowItemImages dtype="Boolean">true</ShowItemImages>
+    </Items>
+    <EFTLink dtype="Default">
+      <EnableEftLinkGiftCardSupport dtype="Boolean">false</EnableEftLinkGiftCardSupport>
+    </EFTLink>
+    <EnvPasswordFile dtype="Default">
+    	<!-- This is the interval in milliseconds that CreatePasswordStorageFileTask runs and creates the password file  -->
+    	<FileCreationRepeatInterval dtype="Integer">900000</FileCreationRepeatInterval>
+    </EnvPasswordFile>    
+    <SequenceFilePaths dtype="Default">
+      <ActiveFilePath dtype="String">sequence/active/</ActiveFilePath>
+      <TrainingFilePath dtype="String">sequence/train</TrainingFilePath>
+    </SequenceFilePaths>
+    <CustomerAccountCreditAsTender dtype="Boolean">false</CustomerAccountCreditAsTender>  
+    <FiscalConfig dtype="Default">
+      <NonTaxableSellingGroups dtype="String">TAX_GROUP_GIFT,TAX_GROUP_SERVICE</NonTaxableSellingGroups>
+    </FiscalConfig>
+  </SystemConfig>
+  <TJXConfig dtype="Default">
+    <SwpcDownloadUpdate dtype="Default">
+      <RepeatInterval dtype="Integer">120</RepeatInterval>
+    </SwpcDownloadUpdate>
+    <TaxRefresh dtype="Default">
+      <IntervalInMinutes dtype="Integer">15</IntervalInMinutes>
+    </TaxRefresh>
+    <InstantCreditApp dtype="Default">
+      <AppDataFilePath dtype="String">D:/Program Files/The TJX Companies Inc/TJX_ICAPP_Deploy/</AppDataFilePath>
+      <AppDataFileName dtype="String">TJX_IC_receiptinfo.txt</AppDataFileName>
+      <ExecutableDir dtype="String">D:/Program Files/The TJX Companies Inc/TJX_ICAPP_Deploy/</ExecutableDir>
+      <Executable dtype="String">TJX_ICApp.exe</Executable>
+    </InstantCreditApp>
+    <CustomerSurvey dtype="Default">
+      <Enabled dtype="Boolean">true</Enabled>
+      <ResponseDays dtype="Integer">14</ResponseDays>
+    </CustomerSurvey>
+    <CheckTender dtype="Default">
+      <LakeRegionBank dtype="Default">
+        <RoutingNumber dtype="String">091911153</RoutingNumber>
+        <AccountNumber dtype="String">455283</AccountNumber>
+        <Address1 dtype="String"/>
+        <City dtype="String">New London</City>
+        <State dtype="String">MN</State>
+        <ZipCode dtype="String">56273</ZipCode>
+      </LakeRegionBank>
+    </CheckTender>
+    <RegisterConfig dtype="Default">
+      <OpenClose dtype="Default">
+        <PromptCancelSuspendTransactions dtype="Boolean">false</PromptCancelSuspendTransactions>
+        <AllowUserChangeOpenBusinessDate dtype="Boolean">false</AllowUserChangeOpenBusinessDate>
+        <VerifyBusinessDate dtype="Boolean">false</VerifyBusinessDate>
+        <!-- This is a cron configuration string for the auto store close. It has the following format: second, minute, hour, day of month, month, day(s) of week each field can be either digits, or expressions. Valid expressions are: *, which means any value is accepted ?, which means the value does 
+          not need to be considered (similar to *, but no validation is ran) */x, where x is a number, means "every x", for instance */15 means every 15 Default setting for TJX is to run every day at 1:30 am -->
+        <AutoStoreCloseCronTab dtype="String">0 30 1 * * ?</AutoStoreCloseCronTab>
+      </OpenClose>
+    </RegisterConfig>
+    <GiftCardConfig dtype="Default">
+      <Last5DigitValidationEnabled dtype="Boolean">true</Last5DigitValidationEnabled>
+    </GiftCardConfig>
+    <Poslog dtype="Default">
+      <!-- Configuration that determines whether or not to suppress Price Change retail price modfiers in the poslog -->
+      <SuppressPriceChangePoslogEntry dtype="Boolean">true</SuppressPriceChangePoslogEntry>
+    </Poslog>
+    <BlindReturn dtype="Default">
+      <CodeValue dtype="Default">
+        <!-- The category and code values below have a direct relationship with the com_code_value table. -->
+        <!-- If there is a need to change these values, then it will be necessary to adjust the id_type -->
+        <!-- column of the tjx_com_returns_customer table. -->
+        <Category dtype="String">TJX_BLIND_RETURN_ID_TYPE</Category>
+        <Code dtype="Default">
+          <DriversLicense dtype="String">TX</DriversLicense>
+          <MilitaryId dtype="String">MI</MilitaryId>
+          <Other dtype="String">OT</Other>
+          <NoId dtype="String">AL</NoId>
+        </Code>
+      </CodeValue>
+      <DeclineCodeNegativeIdListMatch dtype="String">101</DeclineCodeNegativeIdListMatch>
+    </BlindReturn>
+    <!-- TJX-292 Reprint Receipt/Issue Gift Receipt Transaction -->
+    <PrintReceipt dtype="Default">
+      <!-- The number of receipt reprints allowed for a given transaction. -->
+      <AllowedReprints dtype="Integer">2</AllowedReprints>
+    </PrintReceipt>
+    <GiftReceipt dtype="Default">
+      <!-- Number of days from current business day in which a transaction is eligible to have a gift receipt issued. -->
+      <BusinessDateDayThreshold dtype="Integer">30</BusinessDateDayThreshold>
+      <!-- The maximum number of times a gift receipt can be printed for a selected item. -->
+      <MaxPrintThreshold dtype="Integer">4</MaxPrintThreshold>
+    </GiftReceipt>
+  </TJXConfig>
+</Store>

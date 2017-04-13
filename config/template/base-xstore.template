@@ -1,0 +1,33 @@
+#Thu, 04 Aug 2016 09:57:45 +0000
+
+installx.envpoll=true
+installx.xstoredisabled=false
+installx.xfgdisabled=false
+installx.xstore_mobile_disabled=true
+installx.enableTouch=false
+installx.ui.plugins=false
+installx.poll1=true
+installx.poll2=true
+installx.leadreg=base
+installx.orgId=${orgId}
+installx.rtlLocId=001
+installx.terminalId=101
+installx.role=nonlead
+installx.database_disabled=false
+installx.storeName=Boston01
+installx.helpdeskNumber=Call Helpdesk\: 9739064300
+installx.uploadHttpServerURL=
+installx.uploadHttpServerUsername=
+installx.uploadHttpServerPassword=
+installx.xstwrapperparamnumber=7
+installx.clientCode=DTV
+installx.clientCode.salt=DTV
+installx.passwordAlgorithm=Pj4+MAAAAADetYYsih3QujIgrdUp8blv
+installx.keystorePassword=Pj4+MAAAAADetYYsih3QujIgrdUp8blv
+installx.uftpDisabled=true
+installx.uftpMaxSpeed=10000
+installx.getRemoteSqlServerBackupDisabled=false
+installx.databaseType=oracle
+installx.instanceName=xstore
+installx.dbServiceName=OracleServicexstore
+installx.oracleSid=xstore

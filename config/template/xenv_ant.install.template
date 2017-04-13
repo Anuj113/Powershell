@@ -1,0 +1,85 @@
+### Ant Installer - properties auto generated on Thu\ Jul\ 21\ 09\:51\:11\ UTC\ 2016
+
+basedir = C\:\\xstoreinstall\\software\\windows_64_oracle_install,upgrade\\OracleRetailXstorePointofService_15_0_0_549_XST_0_0_0\\15.0.0.549_0.0.0\\xenvironment\\.
+ant.install.config.version = 1.0
+
+
+## Properties from Page:intro
+
+## Properties from Page:install-directory
+# .DirectoryInput
+installDir = D\:\\environment
+# .TargetInput
+apply-xenvironment = true
+# .CheckboxInput
+envpoll = false
+# .CheckboxInput
+xstorepresent = true
+# .CheckboxInput
+xfgpresent = 
+# .CheckboxInput
+xstore_mobile_enabled = false
+# .CheckboxInput
+enableTouch = false
+# .CheckboxInput
+ui.plugins = false
+# .CheckboxInput
+poll1 = false
+# .CheckboxInput
+poll2 = false
+# Targets selected for page
+install-directory-targets = apply-xenvironment,
+
+## Properties from Page:system-information
+# .ValidatedTextInput
+leadreg = base
+# .UnvalidatedTextInput
+rtlLocId = 101
+# .UnvalidatedTextInput
+terminalId = 1
+# .LargeSelectInput
+role = nonlead
+
+## Properties from Page:store-info
+# .UnvalidatedTextInput
+storeName = Boston01
+# .UnvalidatedTextInput
+helpdeskNumber = 9739064300
+
+## Properties from Page:isDbInstalled
+# .LargeSelectInput
+dbpresent = true
+
+## Properties from Page:serviceName
+# .UnvalidatedTextInput
+dbInstance = xstore
+
+## Properties from Page:envpoll
+# .UnvalidatedTextInput
+uploadHttpServerURL = 
+# .UnvalidatedTextInput
+uploadHttpServerUsername = 
+# .UnvalidatedTextInput
+uploadHttpServerPassword = 
+
+## Properties from Page:xstoreWrapperconfigNumber
+# .UnvalidatedTextInput
+xstwrapperparamnumber = 7
+
+## Properties from Page:security-parameters
+# .UnvalidatedTextInput
+clientCode = DTV
+# .UnvalidatedTextInput
+passwordAlgorithm = Pj4+MAAAAADetYYsih3QujIgrdUp8blv
+# .UnvalidatedTextInput
+keystorePassword = Pj4+MAAAAADetYYsih3QujIgrdUp8blv
+
+## Properties from Page:multicast-ftp
+# .CheckboxInput
+useMulticastFTP = false
+# .UnvalidatedTextInput
+uftpMaxSpeed = 10000
+
+## Properties from Page:progress
+# Targets selected for page
+progress-targets = archive-log,

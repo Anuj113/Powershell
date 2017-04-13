@@ -1,0 +1,16 @@
+SQL> BEGIN
+  2   FOR item IN ( SELECT USERNAME FROM DBA_USERS WHERE ACCOUNT_STATUS IN ('OPEN', 'LOCKED', 'EXPIRED') AND USERNAME NOT IN (
+  3  'SYS','SYSTEM') )
+  4   LOOP
+  5    dbms_output.put_line('Locking and Expiring: ' || item.USERNAME);
+  6    execute immediate 'alter user ' ||
+  7  	      sys.dbms_assert.enquote_name(
+  8  	      sys.dbms_assert.schema_name(
+  9  	      item.USERNAME),false) || ' password expire account lock' ;
+ 10   END LOOP;
+ 11  END;
+ 12  /
+
+PL/SQL procedure successfully completed.
+
+SQL> spool off

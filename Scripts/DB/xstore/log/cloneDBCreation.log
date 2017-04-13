@@ -1,0 +1,248 @@
+SQL> shutdown abort;
+ORACLE instance shut down.
+SQL> startup nomount pfile="&scripts\init.ora";
+ORACLE instance started.
+
+Total System Global Area 1073741824 bytes                                       
+Fixed Size                  3053880 bytes                                       
+Variable Size             713033416 bytes                                       
+Database Buffers          352321536 bytes                                       
+Redo Buffers                5332992 bytes                                       
+SQL> Create controlfile reuse set database "XSTORE"
+  2  MAXINSTANCES 8
+  3  MAXLOGHISTORY 1
+  4  MAXLOGFILES 16
+  5  MAXLOGMEMBERS 3
+  6  MAXDATAFILES 100
+  7  Datafile
+  8  '&&file0',
+  9  '&&file1',
+ 10  '&&file2',
+ 11  '&&file3'
+ 12  LOGFILE GROUP 1 ('&oradata\XSTORE\redo01.log') SIZE 50M,
+ 13  GROUP 2 ('&oradata\XSTORE\redo02.log') SIZE 50M,
+ 14  GROUP 3 ('&oradata\XSTORE\redo03.log') SIZE 50M RESETLOGS;
+
+Control file created.
+
+SQL> exec dbms_backup_restore.zerodbid(0);
+
+PL/SQL procedure successfully completed.
+
+SQL> shutdown immediate;
+ORA-01109: database not open 
+
+
+Database dismounted.
+ORACLE instance shut down.
+SQL> startup nomount pfile="&scripts\initXSTORETemp.ora";
+ORACLE instance started.
+
+Total System Global Area 1073741824 bytes                                       
+Fixed Size                  3053880 bytes                                       
+Variable Size             713033416 bytes                                       
+Database Buffers          352321536 bytes                                       
+Redo Buffers                5332992 bytes                                       
+SQL> Create controlfile reuse set database "XSTORE"
+  2  MAXINSTANCES 8
+  3  MAXLOGHISTORY 1
+  4  MAXLOGFILES 16
+  5  MAXLOGMEMBERS 3
+  6  MAXDATAFILES 100
+  7  Datafile
+  8  '&&file0',
+  9  '&&file1',
+ 10  '&&file2',
+ 11  '&&file3'
+ 12  LOGFILE GROUP 1 ('&oradata\XSTORE\redo01.log') SIZE 50M,
+ 13  GROUP 2 ('&oradata\XSTORE\redo02.log') SIZE 50M,
+ 14  GROUP 3 ('&oradata\XSTORE\redo03.log') SIZE 50M RESETLOGS;
+
+Control file created.
+
+SQL> alter system enable restricted session;
+
+System altered.
+
+SQL> alter database "XSTORE" open resetlogs;
+
+Database altered.
+
+SQL> exec dbms_service.delete_service('seeddata');
+
+PL/SQL procedure successfully completed.
+
+SQL> exec dbms_service.delete_service('seeddataXDB');
+
+PL/SQL procedure successfully completed.
+
+SQL> DROP PUBLIC DATABASE LINK DBMS_CLRDBLINK;
+
+Database link dropped.
+
+SQL> alter database rename global_name to "XSTORE";
+
+Database altered.
+
+SQL> ALTER TABLESPACE TEMP ADD TEMPFILE '&oradata\XSTORE\TEMP01.DBF' SIZE 61440K REUSE AUTOEXTEND ON NEXT 640K MAXSIZE UNLIMITED;
+
+Tablespace altered.
+
+SQL> select tablespace_name from dba_tablespaces where tablespace_name='USERS';
+
+TABLESPACE_NAME                                                                 
+------------------------------                                                  
+USERS                                                                           
+
+SQL> alter user sys account unlock identified by "&&sysPassword";
+
+User altered.
+
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> alter user system account unlock identified by "&&systemPassword";
+
+User altered.
+
+SQL> select sid, program, serial#, username from v$session;
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+         1 sqlplus.exe                                                          
+     24500 SYS                                                                  
+                                                                                
+         2 ORACLE.EXE (PMON)                                                    
+     56079                                                                      
+                                                                                
+         3 ORACLE.EXE (PSP0)                                                    
+     63863                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+         4 ORACLE.EXE (VKTM)                                                    
+      3137                                                                      
+                                                                                
+         5 ORACLE.EXE (GEN0)                                                    
+       713                                                                      
+                                                                                
+         6 ORACLE.EXE (MMAN)                                                    
+     31216                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+         7 ORACLE.EXE (DIAG)                                                    
+     25012                                                                      
+                                                                                
+         8 ORACLE.EXE (DBRM)                                                    
+      6981                                                                      
+                                                                                
+         9 ORACLE.EXE (VKRM)                                                    
+     23561                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+        10 ORACLE.EXE (DIA0)                                                    
+     16694                                                                      
+                                                                                
+        11 ORACLE.EXE (DBW0)                                                    
+     52264                                                                      
+                                                                                
+        12 ORACLE.EXE (LGWR)                                                    
+      5016                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+        13 ORACLE.EXE (CKPT)                                                    
+     14352                                                                      
+                                                                                
+        14 ORACLE.EXE (SMON)                                                    
+     56705                                                                      
+                                                                                
+        15 ORACLE.EXE (RECO)                                                    
+     40528                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+        16 ORACLE.EXE (LREG)                                                    
+      1147                                                                      
+                                                                                
+        17 ORACLE.EXE (PXMN)                                                    
+      4813                                                                      
+                                                                                
+        18 ORACLE.EXE (MMON)                                                    
+      3249                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+        19 ORACLE.EXE (MMNL)                                                    
+     64022                                                                      
+                                                                                
+        22 ORACLE.EXE (TMON)                                                    
+     27319                                                                      
+                                                                                
+        23 ORACLE.EXE (TT00)                                                    
+     14256                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+        24 ORACLE.EXE (SMCO)                                                    
+     38115                                                                      
+                                                                                
+        25 ORACLE.EXE (W000)                                                    
+     47037                                                                      
+                                                                                
+        27 ORACLE.EXE (W001)                                                    
+     26058                                                                      
+                                                                                
+
+       SID PROGRAM                                                              
+---------- ----------------------------------------------------------------     
+   SERIAL# USERNAME                                                             
+---------- ------------------------------                                       
+        30 ORACLE.EXE (CJQ0)                                                    
+     22556                                                                      
+                                                                                
+
+25 rows selected.
+
+SQL> alter database character set INTERNAL_CONVERT WE8MSWIN1252;
+
+Database altered.
+
+SQL> alter database national character set INTERNAL_CONVERT AL16UTF16;
+
+Database altered.
+
+SQL> alter system disable restricted session;
+
+System altered.
+
+SQL> @&scripts\postScripts.sql
+SQL> SET VERIFY OFF
+SQL> connect "SYS"/"&&sysPassword" as SYSDBA
+Connected.
+SQL> set echo on
+SQL> spool &scripts_log\postScripts.log append

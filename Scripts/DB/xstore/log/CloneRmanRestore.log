@@ -1,0 +1,48 @@
+SQL> startup mount pfile="&scripts\initXSTORETempOMF.ora";
+ORACLE instance started.
+
+Total System Global Area 1073741824 bytes                                       
+Fixed Size                  3053880 bytes                                       
+Variable Size             713033416 bytes                                       
+Database Buffers          352321536 bytes                                       
+Redo Buffers                5332992 bytes                                       
+Database mounted.
+SQL> execute dbms_backup_restore.resetCfileSection(dbms_backup_restore.RTYP_DFILE_COPY);
+
+PL/SQL procedure successfully completed.
+
+SQL> execute dbms_backup_restore.resetCfileSection(13);
+
+PL/SQL procedure successfully completed.
+
+SQL> host &dbhome_1_bin\rman @&scripts\rmanRestoreDatafiles.sql &&sysPassword;
+
+SQL> column file0 NEW_VALUE file0;
+SQL> select NAME file0 FROM V$DATAFILE_COPY where file# = 3;
+
+FILE0                                                                           
+--------------------------------------------------------------------------------
+E:\APP\ORACLE\ORADATA\XSTORE\SYSAUX01.DBF                                       
+
+SQL> column file1 NEW_VALUE file1;
+SQL> select NAME file1 FROM V$DATAFILE_COPY where file# = 1;
+
+FILE1                                                                           
+--------------------------------------------------------------------------------
+E:\APP\ORACLE\ORADATA\XSTORE\SYSTEM01.DBF                                       
+
+SQL> column file2 NEW_VALUE file2;
+SQL> select NAME file2 FROM V$DATAFILE_COPY where file# = 5;
+
+FILE2                                                                           
+--------------------------------------------------------------------------------
+E:\APP\ORACLE\ORADATA\XSTORE\UNDOTBS01.DBF                                      
+
+SQL> column file3 NEW_VALUE file3;
+SQL> select NAME file3 FROM V$DATAFILE_COPY where file# = 6;
+
+FILE3                                                                           
+--------------------------------------------------------------------------------
+E:\APP\ORACLE\ORADATA\XSTORE\USERS01.DBF                                        
+
+SQL> spool off

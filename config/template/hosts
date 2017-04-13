@@ -1,0 +1,205 @@
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution
+127.0.0.1       localhost
+::1             localhost
+
+################################################################
+################################################################
+## NewPOS R1 Operating Environments (OE) Store Domain Hosts file      
+## v1.0
+## Last Update 2016.10.25
+################################################################
+################################################################
+## TAB OE
+## TAB Store Domain
+## Store 1
+172.26.211.230	TJH010101.tjx.com		TJH010101		TABS1POS1		# Store 1 POS 1
+172.26.211.232	TJH010102.tjx.com		TJH010102		TABS1POS2		# Store 1 POS 2
+172.26.211.231	TABS1POS1PED1.tjx.com		TABS1POS1PED1				# Store 1 POS 1 PED 1
+172.26.211.233	TABS1POS2PED2.tjx.com		TABS1POS2PED2				# Store 1 POS 2 PED 2
+172.26.211.238	TABS1TC01.tjx.com		TABS1TC01						# Store 1 TC 1
+172.26.211.234	TJH010100.tjx.ilo		TJH010100ILO					# Store 1 SC Host iLO
+172.26.211.235	TJH0101SCHH.tjx.com		TJH0101SCHH						# Store 1 SC Host Hypervisor		
+172.26.211.236	TJH010100.tjx.com		TJH010100		TABS1SC1		# Store 1 SC 1
+## TAB Corporate Domain
+172.16.140.142	xoffice-techarch.tjx.com	xoffice-techarch	TABS1XO		# Xoffice
+172.16.140.140	xadmin-poshgta.tjx.com		xadmin-poshgta		TABS1XA		# Xadmin
+172.16.140.141	ohs-poshgta.tjx.com		ohs-poshgta		TABS1OHS			# OHS
+
+## CD OE
+## CD Store Domain
+## Store 1
+172.26.211.241	TJH012101.tjx.com		TJH012101		CDS1POS1		# Store 1 POS 1
+172.26.211.243	TJH012102.tjx.com		TJH012102		CDS1POS2		# Store 1 POS 2
+172.26.211.239	CDS1POS1PED1.tjx.com		CDS1POS1PED1				# Store 1 POS 1 PED 1
+172.26.211.240	CDS1POS2PED2.tjx.com		CDS1POS2PED2				# Store 1 POS 2 PED 2
+172.26.211.248	CDS1TC01.tjx.com		CDS1TC01						# Store 1 TC 1
+172.26.211.244	TJH012100.tjx.ilo		TJH012100ILO					# Store 1 SC Host iLO
+172.26.211.245	TJH0121SCHH.tjx.com		TJH0121SCHH						# Store 1 SC Host Hypervisor	
+172.26.211.246	TJH012100.tjx.com		TJH012100		CDS1SC1			# Store 1 SC 1
+172.26.211.249	SWPCHG121.tjx.com		TABS1SWPCHG121		TABS1SWPC1	# WebPC 1 HG121
+172.26.211.250	SWPCHG247.tjx.com		CDS1SWPCHG247		CDS1WPC1	# WebPC 1 HG247
+## CD Corporate Domain
+172.16.140.143	xoffice-poshgdc.tjx.com		xoffice-poshgdc 	CDS1XO		# Xoffice
+172.16.140.144	xadmin-poshgdc.tjx.com		xadmin-poshgdc		CDS1XAP		# Xadmin
+172.16.140.145	xohs-poshgdc.tjx.com		xohs-poshgdc		CDS1OHS		# OHS
+
+## QA OE
+## QA Store Domain
+## Store 1
+172.26.212.197	TJH010701.tjx.com		TJH010701						# Store 1 POS 1
+172.26.212.198	TJH010702.tjx.com		TJH010702						# Store 1 POS 2
+172.26.212.199	TJH010703.tjx.com		TJH010703						# Store 1 POS 3
+172.26.212.200	QAS1POS1PED1.tjx.com		QAS1POS1PED1				# Store 1 POS 1 PED 1
+172.26.212.201	QAS1POS2PED2.tjx.com		QAS1POS2PED2				# Store 1 POS 2 PED 2
+172.26.212.202	QAS1POS3PED3.tjx.com		QAS1POS3PED3				# Store 1 POS 3 PED 3
+172.26.212.209	QAS1TC01.tjx.com		QAS1TC01						# Store 1 TC 1
+172.26.212.193	TJH010700.tjx.ilo		TJH059400.tjx.ilo		TJH010700ILO	TJH059400ILO			# Store 1, 2 SC Host iLO
+172.26.212.194	TJH0107SCHH.tjx.com		TJH0107SCHH						# Store 1 SC Host Hypervisor		
+172.26.212.195	TJH010700.tjx.com		TJH010700		QAS1SC1			# Store 1 SC 1
+172.26.212.196	SWPCHG107.tjx.com		QAS1SWPCHG107		QAS1SWPC1	# WebPC 1 HG107
+
+## Store 2
+172.26.212.205	TJH059401.tjx.com		TJH010701						# Store 2 POS 1
+172.26.212.206	TJH059402.tjx.com		TJH059402						# Store 2 POS 2
+172.26.212.207	QAS2POS1PED1.tjx.com	QAS1POS1PED1					# Store 2 POS 1 PED 1
+172.26.212.208	QAS2POS2PED2.tjx.com	QAS2POS2PED2					# Store 2 POS 2 PED 2
+172.26.212.209	QAS2TC01.tjx.com		QAS2TC01						# Store 2 TC 1
+172.26.212.203	TJH059400.tjx.com		TJH059400	QAS2SC1				# Store 2 SC 1
+172.26.212.204	SWPCHG594.tjx.com		QAS2SWPCHG594		QAS2SWPC1	# WebPC 2 HG594
+
+
+## Store 3
+172.26.212.214	TJH029601.tjx.com	TJH029601					# Store 3 POS 1
+172.26.212.215	TJH029602.tjx.com	TJH029602					# Store 3 POS 2
+172.26.212.216	QAS3POS1PED1.tjx.com	QAS3POS1PED1			# Store 3 POS 1 PED 1
+172.26.212.217	QAS3POS2PED2.tjx.com	QAS3POS2PED2			# Store 3 POS 2 PED 2
+172.26.212.218	QAS3TC01.tjx.com	QAS3TC01					# Store 3 TC 1
+172.26.212.210	TJH029600.tjx.ilo		TJH029600ILO			# Store 3 SC Host iLO
+172.26.212.211	TJH0296SCHH.tjx.com		TJH0296SCHH				# Store 3 SC Host Hypervisor
+172.26.212.212	TJH029600.tjx.com	TJH029600					# Store 3 SC 1
+172.26.212.204	SWPCHG296.tjx.com	QAS3SWPCHG296	QAS3SWPC1	# WebPC 3 HG296
+
+## Store 4
+10.241.1.5 TJH032601.tjx.com 	TJH032601					# Store 4 POS 1
+10.241.1.4 TJH032602.tjx.com 	TJH032602					# Store 4 POS 2
+10.241.1.3 TJH032603.tjx.com 	TJH032603					# Store 4 POS 3
+10.241.1.2 TJH032604.tjx.com 	TJH032604					# Store 4 POS 4
+10.241.1.1 TJH032605.tjx.com 	TJH032605					# Store 4 POS 5
+10.241.1.61	QAS4POS1PED1.tjx.com	QAS4POS1PED1			# Store 4 POS 1 PED 1
+10.241.1.60	QAS4POS2PED2.tjx.com	QAS4POS2PED2			# Store 4 POS 2 PED 2
+10.241.1.53	QAS4POS3PED3.tjx.com	QAS4POS3PED3			# Store 4 POS 3 PED 3
+10.241.1.52	QAS4POS4PED4.tjx.com	QAS4POS4PED4			# Store 4 POS 4 PED 4
+10.241.1.51	QAS4POS5PED5.tjx.com	QAS4POS5PED5			# Store 4 POS 5 PED 5
+10.241.1.120	QAS4TC01.tjx.com	QAS4TC01				# Store 4 TC 1
+10.241.1.243	TJH032600.tjx.ilo	TJH046500.tjx.ilo	TJH068800.tjx.ilo	TJH032600ILO	TJH046500ILO	TJH068800ILO	# Store 4, 5, 6 SC Host iLO
+10.241.1.248	TJH032600SCHH.tjx.com	TJH046500SCHH.tjx.com	TJH068800SCHH.tjx.com	TJH032600SCHH	TJH0465SCHH		TJH0688SCHH		# Store 4, 5, 6 SC Host Hypervisor
+10.241.1.125 TJH032600.tjx.com		TJH032600				# Store 4 SC 1
+
+## Store 5
+10.241.1.7 TJH046501.tjx.com 	TJH046501					# Store 5 POS 1
+10.241.1.9 TJH046502.tjx.com 	TJH046502					# Store 5 POS 2
+10.241.1.6 TJH046503.tjx.com 	TJH046503					# Store 5 POS 3
+10.241.1.8 TJH046504.tjx.com 	TJH046504					# Store 5 POS 4
+10.241.1.10 TJH046505.tjx.com 	TJH046505					# Store 5 POS 5
+10.241.1.65	QAS5POS1PED1.tjx.com	QAS5POS1PED1			# Store 5 POS 1 PED 1
+10.241.1.59	QAS5POS2PED2.tjx.com	QAS5POS2PED2			# Store 5 POS 2 PED 2
+10.241.1.56	QAS5POS3PED3.tjx.com	QAS5POS3PED3			# Store 5 POS 3 PED 3
+10.241.1.58	QAS5POS4PED4.tjx.com	QAS5POS4PED4			# Store 5 POS 4 PED 4
+10.241.1.54	QAS5POS5PED5.tjx.com	QAS5POS5PED5			# Store 5 POS 5 PED 5
+10.241.1.119	QAS5TC01.tjx.com	QAS5TC01				# Store 5 TC 1
+10.241.1.124 TJH046500.tjx.com	TJH046500					# Store 5 SC 1 
+
+
+## Store 6
+10.241.1.12	TJH068801.tjx.com	TJH068801					# Store 6 POS 1
+10.241.1.13 TJH068802.tjx.com	TJH068802					# Store 6 POS 2
+10.241.1.14 TJH068803.tjx.com	TJH068803					# Store 6 POS 3
+10.241.1.11 TJH068804.tjx.com	TJH068804					# Store 6 POS 4
+10.241.1.15	TJH068805.tjx.com	TJH068805					# Store 6 POS 5
+10.241.1.62	QAS6POS1PED1.tjx.com	QAS6POS1PED1			# Store 6 POS 1 PED 1
+10.241.1.63	QAS6POS2PED2.tjx.com	QAS6POS2PED2			# Store 6 POS 2 PED 2
+10.241.1.64	QAS6POS3PED3.tjx.com	QAS6POS3PED3			# Store 6 POS 3 PED 3
+10.241.1.55	QAS6POS4PED4.tjx.com	QAS6POS4PED4			# Store 6 POS 4 PED 4
+10.241.1.57	QAS6POS5PED5.tjx.com	QAS6POS5PED5			# Store 6 POS 5 PED 5
+10.241.1.118	QAS6TC01.tjx.com	QAS6TC01				# Store 6 TC 1
+10.241.1.123	TJH068800.tjx.com	TJH068800				# Store 6 SC 1
+
+## QA Corporate Domain
+172.16.140.146	xoffice-poshgq.tjx.com		xoffice-poshgq				# Xoffice
+172.16.140.147	xadmin-poshgq.tjx.com		xadmin-poshgq				# Xadmin
+172.16.140.148	xohs-poshgq.tjx.com		xohs-poshgq						# OHS
+
+## QA RTS
+## QA SVS RTS VIP
+172.16.136.29	svs-qa.tjx.com		QAS1SVSRTS1	QAS2SVSRTS1	QAS3SVSRTS1	QAS4SVSRTS1	QAS5SVSRTS1	QAS6SVSRTS1
+## QA ECD Phase 1 RTS VIP
+172.16.136.86	RTSECDQA.tjx.com	QAS1ECDRTS1	QAS2ECDRTS1	QAS3ECDRTS1	QAS4ECDRTS1	QAS5ECDRTS1	QAS6ECDRTS1
+
+## PE OE
+## PE Store Domain
+## Store 1
+172.26.212.223	TJH038401.tjx.com		TJH038401								# Store 1 POS 1
+172.26.212.224	TJH038402.tjx.com		TJH038402								# Store 1 POS 2
+172.26.212.225	PES1POS1PED1.tjx.com	PES1POS1PED1							# Store 1 POS 1 PED 1
+172.26.212.226	PES1POS2PED2.tjx.com	PES1POS2PED2							# Store 1 POS 2 PED 2
+172.26.212.231	PES1TC01.tjx.com	PES2TC01.tjx.com	PES1TC01	PES2TC01	# Store 1, 2 TC 1
+172.26.212.219	TJH038400.tjx.ilo	TJH038400ILO								# Store 1 SC Host iLO
+172.26.212.220	TJH0384SCHH.tjx.com	TJH0384SCHH									# Store 1 SC Host Hypervisor
+172.26.212.221	TJH038400.tjx.com		TJH038400								# Store 1 SC 1
+172.26.212.222	SWPCHG384.tjx.com		PES1SWPCHG384	PES1SWPC1				# WebPC 1 HG384
+
+## Store 2
+172.26.212.227	TJH044201.tjx.com		TJH044201					# Store 2 POS 1
+172.26.212.228	TJH044202.tjx.com		TJH044202					# Store 2 POS 2
+172.26.212.229	PES2POS1PED1.tjx.com	PES2POS1PED1				# Store 2 POS 1 PED 1
+172.26.212.230	PES2POS2PED2.tjx.com	PES2POS2PED2				# Store 2 POS 2 PED 2
+172.26.212.232	TJH044200.tjx.ilo		TJH044200ILO				# Store 2 SC Host iLO
+172.26.212.233	TJH0442SCHH.tjx.com		TJH0442SCHH					# Store 2 SC Host Hypervisor
+172.26.212.234	TJH044200.tjx.com		TJH044200					# Store 2 SC 1
+172.26.212.235	SWPCH442.tjx.com		PES2SWPCHG442	PES2SWPC1	# WebPC 2 HG442
+
+## PE Corporate Domain
+172.16.140.152	xoffice-poshgpf.tjx.com		xoffice-poshgpf		# Xoffice
+172.16.140.153	xadmin-poshgpf.tjx.com		xadmin-poshgpf		# Xadmin
+172.16.140.154	xohs-poshgpf.tjx.com		xohs-poshgpf		# OHS
+
+## PE APM
+69.27.44.63	tjxpos.saas.appdynamics.com					# 
+
+## AD-Hoc
+## ZCM Addresses
+10.18.0.70	lnxpazcm07.tjx.com	lnxpazcm07
+10.18.0.71	lnxpazcm08.tjx.com	lnxpazcm08
+10.18.0.72	lnxpazcm09.tjx.com	lnxpazcm09
+10.18.0.73	lnxpazcm10.tjx.com	lnxpazcm10
+10.18.0.74	lnxpazcm11.tjx.com	lnxpazcm11
+10.18.0.75	lnxpazcm12.tjx.com	lnxpazcm12
+10.18.0.76	lnxpazcm13.tjx.com	lnxpazcm13
+10.18.0.77	lnxpazcm14.tjx.com	lnxpazcm14
+10.18.0.78	lnxpazcm15.tjx.com	lnxpazcm15
+10.18.0.79	lnxpazcm16.tjx.com	lnxpazcm16
+10.18.0.81	lnxpazcm18.tjx.com	lnxpazcm18
+10.18.0.82	lnxpazcm19.tjx.com	lnxpazcm19
+10.18.0.83	lnxpazcm21.tjx.com	lnxpazcm21
+10.18.0.84	lnxpazcm20.tjx.com	lnxpazcm20
+10.17.0.74	zcmprod-v.tjx.com	zcmprod-v
+10.17.0.82	zcmprodcontent.tjx.com	zcmprodcontent
+172.24.70.80	lnxpazcm17.tjx.com	lnxpazcm17

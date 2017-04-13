@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:task="http://www.springframework.org/schema/task" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns="http://www.springframework.org/schema/beans"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+  <context:annotation-config />
+
+  <!-- this is for the sake of atoms that might want to spawn something that can be done asynchronously -->
+  <task:executor id="taskExecutor" pool-size="5-10" queue-capacity="100" rejection-policy="CALLER_RUNS" />
+
+  <!-- Keeps trach of which actions are currently running, with the idea that the same action cannot be run simultaneously -->
+  <bean id="currentlyRunningActions" class="oracle.retail.xenvironment.LockedActions" />
+
+  <!-- The "local" entry must be listed last, so that it lets local properties get the last chance to override -->
+  <util:list id="propertiesFileList" value-type="java.lang.String">
+    <value>actions</value>
+    <value>environment</value>
+    <value>update</value>
+    <value>local</value>
+  </util:list>
+
+  <bean id="properties" class="oracle.retail.xenvironment.config.XenvironmentProperties" init-method="init">
+    <property name="propertiesFiles" ref="propertiesFileList" />
+  </bean>
+
+  <bean id="actionRouter" class="oracle.retail.xenvironment.action.ActionRouter">
+    <property name="actionFactory" ref="actionFactory" />
+  </bean>
+
+  <!-- Atom Helpers -->
+  <bean id="atomFactory" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
+    <property name="serviceLocatorInterface" value="oracle.retail.xenvironment.atoms.AtomFactory" />
+  </bean>
+
+  <!-- Atoms -->
+  <!-- Please keep in alphabetical order -->
+  <bean id="applyEnvUpdates" class="oracle.retail.xenvironment.atoms.ApplyEnvUpdates" scope="prototype" />
+  <bean id="applyJarUpdates" class="oracle.retail.xenvironment.atoms.ApplyJarUpdates" scope="prototype" />
+  <bean id="applyXadminUpdates" class="oracle.retail.xenvironment.atoms.ApplyXadminUpdates" scope="prototype" />
+  <bean id="archiveDownloadedFile" class="oracle.retail.xenvironment.atoms.ArchiveDownloadedFile" scope="prototype" />
+  <bean id="bringUiToFront" class="oracle.retail.xenvironment.atoms.BringUIToFront" scope="prototype"/>
+  <bean id="checkUpdates" class="oracle.retail.xenvironment.atoms.update.CheckUpdates" scope="prototype" />
+  <bean id="compress" class="oracle.retail.xenvironment.atoms.Compress" scope="prototype" />
+  <bean id="configUpdate" class="oracle.retail.xenvironment.atoms.ConfigUpdate" scope="prototype" />
+  <bean id="configUpdateNoForward" class="oracle.retail.xenvironment.atoms.ConfigUpdateNoForward" scope="prototype" />
+  <bean id="copyDirectoryTree" class="oracle.retail.xenvironment.atoms.CopyDirectoryTree" scope="prototype" />
+  <bean id="copyFiles" class="oracle.retail.xenvironment.atoms.CopyFiles" scope="prototype" />
+  <bean id="copyFilesInsertVariableBeforeExtension" class="oracle.retail.xenvironment.atoms.CopyFilesInsertVariableBeforeExtension"
+    scope="prototype" />
+  <bean id="createMarkerFile" class="oracle.retail.xenvironment.atoms.CreateMarkerFile" scope="prototype" />
+  <bean id="createUpdateDirectories" class="oracle.retail.xenvironment.atoms.CreateUpdateDirectories"
+    scope="prototype" />
+  <bean id="createVersionProperties" class="oracle.retail.xenvironment.atoms.CreateVersionProperties"
+    scope="prototype" />
+  <bean id="createWrapperParamConfig" class="oracle.retail.xenvironment.atoms.CreateWrapperParamConfig"
+    scope="prototype" />
+  <bean id="createXstoreEnvWrapperConf" class="oracle.retail.xenvironment.atoms.CreateXstoreEnvWrapperConf"
+    scope="prototype" />
+  <bean id="decompress" class="oracle.retail.xenvironment.atoms.Decompress" scope="prototype" />
+  <bean id="drChangeSystemPropertyAndStoreOld" class="oracle.retail.xenvironment.atoms.DrChangeSystemPropertyAndStoreOld"
+    scope="prototype" />
+  <bean id="drRestoreOriginalSystemProperty" class="oracle.retail.xenvironment.atoms.DrRestoreOriginalSystemProperty"
+    scope="prototype" />
+  <bean id="drSetDisasterRecoveryMode" class="oracle.retail.xenvironment.atoms.DrSetDisasterRecoveryMode"
+    scope="prototype" />
+  <bean id="drUiSetDrMode" class="oracle.retail.xenvironment.atoms.DrUISetDrMode"
+    scope="prototype" />
+  <bean id="failIfPropertyDoesNotExistOrIsEmpty" class="oracle.retail.xenvironment.atoms.FailIfPropertyDoesNotExistOrIsEmpty"
+    scope="prototype" />
+  <bean id="fileExists" class="oracle.retail.xenvironment.atoms.FileExists" scope="prototype" />
+  <bean id="forceDownloadDeploymentFile" class="oracle.retail.xenvironment.atoms.ForceDownloadDeploymentFile"
+    scope="prototype" />
+  <bean id="forwardRequestToLead" class="oracle.retail.xenvironment.atoms.ForwardRequestToLead" scope="prototype" />
+  <bean id="forwardXstoreStatusMessage" class="oracle.retail.xenvironment.atoms.ForwardXstoreStatusMessage"
+    scope="prototype" />
+  <bean id="getFilesFromGroup" class="oracle.retail.xenvironment.atoms.GetFilesFromGroup" scope="prototype" />
+  <bean id="getPendingDeployments" class="oracle.retail.xenvironment.atoms.GetPendingDeployments" scope="prototype" />
+  <bean id="getRemoteFile" class="oracle.retail.xenvironment.atoms.GetRemoteFile" scope="prototype" />
+  <bean id="ifNoFilesExist" class="oracle.retail.xenvironment.atoms.IfNoFilesExist" scope="prototype" />
+  <bean id="importCertIntoTruststore" class="oracle.retail.xenvironment.atoms.ImportCertIntoTruststore"
+    scope="prototype" />
+  <bean id="isDbDownloadComplete" class="oracle.retail.xenvironment.atoms.IsDbDownloadComplete" scope="prototype" />
+  <bean id="isPollingPackageComplete" class="oracle.retail.xenvironment.atoms.IsPollingPackageComplete"
+    scope="prototype" />
+  <bean id="killProcessByPidFile" class="oracle.retail.xenvironment.atoms.KillProcessByPidFile" scope="prototype" />
+  <bean id="launchMaster" class="oracle.retail.xenvironment.atoms.LaunchMaster" scope="prototype" primary="true"  />
+  <bean id="logDirectoryContents" class="oracle.retail.xenvironment.atoms.LogDirectoryContents" scope="prototype" />
+  <bean id="logUpdateStatus" class="oracle.retail.xenvironment.atoms.LogUpdateStatus" scope="prototype" />
+  <bean id="makeDirectory" class="oracle.retail.xenvironment.atoms.MakeDirectory" />
+  <bean id="moveFiles" class="oracle.retail.xenvironment.atoms.MoveFiles" scope="prototype" />
+  <bean id="noop" class="oracle.retail.xenvironment.atoms.Noop" scope="prototype" />
+  <bean id="noopDelay" class="oracle.retail.xenvironment.atoms.NoopDelay" scope="prototype" />
+  <bean id="processDeploymentDownloads" class="oracle.retail.xenvironment.atoms.ProcessDeploymentDownloads"
+    scope="prototype" />
+  <bean id="processDownloads" class="oracle.retail.xenvironment.atoms.ProcessDownloads" scope="prototype" />
+  <bean id="removeDirectory" class="oracle.retail.xenvironment.atoms.RemoveDirectory" scope="prototype" />
+  <bean id="removeFiles" class="oracle.retail.xenvironment.atoms.RemoveFiles" scope="prototype" />
+  <bean id="removeMarker" class="oracle.retail.xenvironment.atoms.RemoveMarker" scope="prototype" />
+  <bean id="removeOldFiles" class="oracle.retail.xenvironment.atoms.RemoveOldFiles" scope="prototype" />
+  <bean id="rewriteUftpHostsFile" class="oracle.retail.xenvironment.atoms.RewriteUftpHostsFile" scope="prototype" />
+  <bean id="rotateFiles" class="oracle.retail.xenvironment.atoms.RotateFiles" scope="prototype" />
+  <bean id="sendDataserverCommand" class="oracle.retail.xenvironment.atoms.SendDataserverCommand" scope="prototype" />
+  <bean id="sendEnvironmentRequest" class="oracle.retail.xenvironment.atoms.SendEnvironmentRequest"
+    scope="prototype" />
+  <bean id="sendEnvironmentRequestToList" class="oracle.retail.xenvironment.atoms.SendEnvironmentRequestToList"
+    scope="prototype" />
+  <bean id="sendXstoreStatusMessage" class="oracle.retail.xenvironment.atoms.SendXstoreStatusMessage"
+    scope="prototype" />
+  <bean id="setCurrentSystemState" class="oracle.retail.xenvironment.atoms.SetCurrentSystemState" scope="prototype" />
+  <bean id="startXstoreOrBringToFront" class="oracle.retail.xenvironment.atoms.StartXstoreOrBringToFront" scope="prototype" />
+  <bean id="tar" class="oracle.retail.xenvironment.atoms.Tar" scope="prototype" />
+  <bean id="untar" class="oracle.retail.xenvironment.atoms.Untar" scope="prototype" />
+  <bean id="unzip" class="oracle.retail.xenvironment.atoms.Unzip" scope="prototype" />
+  <bean id="updateHelper" class="oracle.retail.xenvironment.atoms.update.UpdateHelper" scope="prototype" />
+  <bean id="updateRSSFeeds" class="oracle.retail.xenvironment.atoms.update.UpdateRSSFeeds" scope="prototype" />
+  <bean id="uploadFilesHttpPut" class="oracle.retail.xenvironment.atoms.http.UploadFilesHTTPPut" scope="prototype" />
+  <bean id="waitForDBDownloads" class="oracle.retail.xenvironment.atoms.WaitForDBDownloads" scope="prototype" />
+  <bean id="waitForFileToExist" class="oracle.retail.xenvironment.atoms.WaitForFileToExist" scope="prototype" />
+  <bean id="waitForMarkerDuringSpecTime" class="oracle.retail.xenvironment.atoms.WaitForMarkerDuringSpecTime"
+    scope="prototype" />
+  <bean id="waitForMarkerFileRemoval" class="oracle.retail.xenvironment.atoms.WaitForMarkerFileRemoval"
+    scope="prototype" />
+  <bean id="waitForPollingPackages" class="oracle.retail.xenvironment.atoms.WaitForPollingPackages"
+    scope="prototype" />
+  <bean id="waitForUIInit" class="oracle.retail.xenvironment.atoms.WaitForUIInit" scope="prototype" />
+  <bean id="waitForUpdateDownloads" class="oracle.retail.xenvironment.atoms.WaitForUpdateDownloads"
+    scope="prototype" />
+  <bean id="windowFinder" class="oracle.retail.xenvironment.atoms.WindowFinder" scope="prototype" />
+  <bean id="writeMarkerOnLead" class="oracle.retail.xenvironment.atoms.WriteMarkerOnLead" scope="prototype" />
+  <bean id="zip" class="oracle.retail.xenvironment.atoms.Zip" scope="prototype" />
+
+  <!-- Actions -->
+
+  <bean id="chain" class="oracle.retail.xenvironment.action.Chain" scope="prototype">
+    <property name="actionType" value="CHAIN" />
+  </bean>
+  <bean id="alias" class="oracle.retail.xenvironment.action.Alias" scope="prototype">
+    <property name="actionType" value="ALIAS" />
+  </bean>
+  <bean id="atomRunner" class="oracle.retail.xenvironment.action.AtomRunner" scope="prototype">
+    <property name="actionType" value="ATOM" />
+    <property name="atomFactory" ref="atomFactory" />
+  </bean>
+  <bean id="atomRunnerAdhoc" class="oracle.retail.xenvironment.action.AtomRunnerAdhoc" scope="prototype">
+    <property name="actionType" value="ATOM" />
+    <property name="atomFactory" ref="atomFactory" />
+  </bean>
+  <bean id="actionFactory" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
+    <property name="serviceLocatorInterface" value="oracle.retail.xenvironment.action.ActionFactory" />
+    <property name="serviceMappings">
+      <props>
+        <prop key="ATOM">atomRunner</prop>
+        <prop key="CHAIN">chain</prop>
+        <prop key="ALIAS">alias</prop>
+        <prop key="ATOM_ADHOC">atomRunnerAdhoc</prop>
+      </props>
+    </property>
+  </bean>
+
+
+  <!-- Registration -->
+  <bean id="registrationDataManager" class="oracle.retail.xenvironment.registration.RegistrationDataManager"
+    init-method="init" destroy-method="saveAllData" />
+  <bean id="registrationSender" class="oracle.retail.xenvironment.registration.RegistrationSender"
+    destroy-method="sendUnregistration" />
+  <bean id="registrationService" class="oracle.retail.xenvironment.registration.RegistrationService" />
+ 
+  <!-- trickle polling  -->
+  <bean id="tricklePolling" class="oracle.retail.xenvironment.scheduledtasks.ScheduledTaskProcessor">
+    <property name="actionName" value="trickle-polling" />
+    <property name="runOnLeadOnly" value="true" />
+  </bean>
+   <bean id="uploadTrickleFilesLead" class="oracle.retail.xenvironment.scheduledtasks.ScheduledTaskProcessor">
+    <property name="actionName" value="gather-and-upload-trickle-files" />
+    <property name="runOnLeadOnly" value="true" />
+  </bean>
+   <bean id="uploadTrickleFilesNonLead" class="oracle.retail.xenvironment.scheduledtasks.ScheduledTaskProcessor">
+    <property name="actionName" value="gather-and-upload-trickle-files" />
+    <property name="runOnLeadOnly" value="false" />
+  </bean>
+   <task:scheduled-tasks>
+    <task:scheduled ref="registrationSender" method="sendRegistration" fixed-rate="300000" initial-delay="3000" />
+    <task:scheduled ref="registrationDataManager" method="checkForInactiveAndExpiredRegisters" fixed-rate="3600000" initial-delay="3000"/>
+    <task:scheduled ref="deploymentRetriever" method="getDeploymentFilesFromXcenter" fixed-rate="180000" initial-delay="3000" />
+    <task:scheduled ref="xcenterEventLogger" method="sendAllPersistedMessages" fixed-rate="10000" initial-delay="3000" />
+    <task:scheduled ref="tricklePolling" method="runTask" fixed-rate="900000" initial-delay="3000" />
+    <task:scheduled ref="uploadTrickleFilesLead" method="runTask" fixed-rate="900000" initial-delay="3000" />
+    <task:scheduled ref="uploadTrickleFilesNonLead" method="runTask" fixed-rate="900000" initial-delay="3000" />
+   </task:scheduled-tasks>
+
+   <!-- store webpc  -->
+  <bean id="store_webpc" class="oracle.retail.xenvironment.scheduledtasks.ScheduledTaskProcessor">
+    <property name="actionName" value="store_webpc" />
+    <property name="runOnLeadOnly" value="true" />
+  </bean>
+   <task:scheduled-tasks>
+    <task:scheduled ref="store_webpc" method="runTask" fixed-rate="900000" initial-delay="3000" />
+   </task:scheduled-tasks>
+
+  <!-- Xcenter Event Logger -->
+  <bean id="xcenterEventLogger" class="oracle.retail.xenvironment.xcenterlog.XcenterEventLogger" />
+
+  <!-- Config -->
+  <bean id="xenvConfig" class="oracle.retail.xenvironment.config.XenvConfig" depends-on="properties"/>
+
+  <!-- Main -->
+  <bean id="xenvMain" class="oracle.retail.xenvironment.Xenvironment" destroy-method="shutdown"/>
+
+  <!-- IPC services -->
+  <bean id="mbeanInfoHelper" class="dtv.jmx.MBeanInfoHelper" />
+  <bean id="ipcServer" class="dtv.ipc.server.Server" destroy-method="stopServer" />
+  <bean id="ipcXstoreServiceSync" class="oracle.retail.xenvironment.XstoreService">
+    <property name="shouldRunAsynchronously" value="false" />
+  </bean>
+  <bean id="ipcXstoreServiceAsync" class="oracle.retail.xenvironment.XstoreService">
+    <property name="shouldRunAsynchronously" value="true" />
+  </bean>
+  <bean id="ipcRegistrationService" class="oracle.retail.xenvironment.registration.RegistrationService" />
+  <bean id="ipcEnvGuiService" class="oracle.retail.xenvironment.EnvGuiService" />
+
+  <bean id="ipcResolveChainService" class="oracle.retail.xenvironment.ResolveChainService" />
+  <bean id="ipcSysInfoService" class="oracle.retail.xenvironment.SysInfoService" />
+
+  <!-- HTTP Server -->
+  <bean id="httpFileServer" class="oracle.retail.xenvironment.fileserver.HTTPFileServer" destroy-method="stop" />
+
+  <bean id="ipcServiceLocatorFactory" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
+    <property name="serviceLocatorInterface" value="dtv.ipc.server.IIpcServiceLocator" />
+    <property name="serviceMappings">
+      <props>
+        <prop key="/xstore">ipcXstoreServiceAsync</prop>
+        <prop key="/registration">ipcRegistrationService</prop>
+        <prop key="/envSoapNoWait">ipcXstoreServiceAsync</prop>
+
+        <prop key="/env">ipcXstoreServiceSync</prop>
+        <prop key="/envAckOnly">ipcXstoreServiceAsync</prop>
+
+        <prop key="/gui/xenvinit">ipcEnvGuiService</prop>
+        <prop key="/gui/ipcrunatom">ipcXstoreServiceAsync</prop>
+        <prop key="/gui">ipcEnvGuiService</prop>
+
+        <prop key="/resolvechain">ipcResolveChainService</prop>
+        <prop key="/sysinfo">ipcSysInfoService</prop>
+      </props>
+    </property>
+  </bean>
+  <bean id="httpAuthorizationProviderFactory" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
+    <property name="serviceLocatorInterface" value="oracle.retail.xenvironment.atoms.http.IHttpAuthorizationProviderFactory" />
+    <property name="serviceMappings">
+      <props>
+        <prop key="basic">basicHttpAuthorizationProvider</prop>
+        <prop key="digest">digestHttpAuthorizationProvider</prop>
+        <prop key="xenv">xenvHttpAuthorizationProvider</prop>
+      </props>
+    </property>
+  </bean>
+  <bean id="basicHttpAuthorizationProvider" class="oracle.retail.xenvironment.atoms.http.BasicHttpAuthorizationProvider"
+    scope="prototype" />
+  <bean id="digestHttpAuthorizationProvider" class="oracle.retail.xenvironment.atoms.http.DigestHttpAuthorizationProvider"
+    scope="prototype" />
+  <bean id="xenvHttpAuthorizationProvider" class="oracle.retail.xenvironment.atoms.http.XenvHttpAuthorizationProvider"
+    scope="prototype" />
+
+  <bean id="deploymentRetriever" class="oracle.retail.xenvironment.deployment.DeploymentRetriever" />
+  <bean id="deploymentLocationMap" class="org.springframework.beans.factory.config.ServiceLocatorFactoryBean">
+    <property name="serviceLocatorInterface" value="oracle.retail.xenvironment.deployment.location.DeploymentLocationMap" />
+    <property name="serviceMappings">
+      <props>
+        <prop key="CONFIG">configDeploymentLocationInfo</prop>
+        <prop key="APPUPD">appUpdDeploymentLocationInfo</prop>
+        <prop key="DATA">dataDeploymentLocationInfo</prop>
+        <prop key="COMPRESSED_DATA">compressedDataDeploymentLocationInfo</prop>
+        <prop key="CIP">cipDeploymentLocationInfo</prop>
+        <prop key="DEBITBIN">debitBinDeploymentLocationInfo</prop>
+        <prop key="JRE">jreDeploymentLocationInfo</prop>
+        <prop key="ENVUPD">envUpdDeploymentLocationInfo</prop>
+        <prop key="TRANSARMOR_BIN">transarmorDeploymentLocationInfo</prop>
+      </props>
+    </property>
+  </bean>
+  <bean id="configDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.ConfigDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="appUpdDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.AppUpdDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="dataDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.DataDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="compressedDataDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.CompressedDataDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="cipDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.CipDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="debitBinDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.DebitBinDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="jreDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.JreDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="envUpdDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.EnvUpdDeploymentLocationInfo"
+    scope="prototype" />
+  <bean id="transarmorDeploymentLocationInfo" class="oracle.retail.xenvironment.deployment.location.TransarmorDeploymentLocationInfo"
+    scope="prototype" />
+
+  <bean id="xcenterEventLogMessageFactory" class="oracle.retail.xenvironment.xcenterlog.XcenterEventLogMessageFactory" />
+
+  <bean id="systemState" class="oracle.retail.xenvironment.SystemState" init-method="init"/>
+
+  <bean id="executionPlanCalculator" class="oracle.retail.xenvironment.util.ExecutionPlanCalculator">
+    <property name="atomFactory" ref="atomFactory" />
+  </bean>
+
+  <bean id="ipcMessageHelper" class="oracle.retail.xenvironment.util.IpcMessageHelper" />
+
+  <bean id="uiMessenger" class="oracle.retail.xenvironment.ui.UIMessenger" />
+
+  <bean id="alertMarkerWatcher" class="oracle.retail.xenvironment.AlertMarkerWatcher" scope="prototype" />
+
+</beans>

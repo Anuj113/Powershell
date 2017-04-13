@@ -1,0 +1,41 @@
+Hostname,Environment,Location,Chain Name,Chain ID,REG Model,IP address,StoreId,Store-Controller Ip,Register ID,PED,Listener,ChainStoreId,XOHS,XAdmin,XCenter
+TJH032601,QA,Pune,TJH,28,REG5800,10.241.1.3,0326,10.241.1.125,01,10.241.1.61,1524,280326,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH032602,QA,Pune,TJH,28,REG5800,10.241.1.4,0326,10.241.1.125,02,10.241.1.60,1524,280326,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH032603,QA,Pune,TJH,28,REG5810,10.241.1.5,0326,10.241.1.125,03,10.241.1.53,1524,280326,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH032604,QA,Pune,TJH,28,REG5810,10.241.1.2,0326,10.241.1.125,04,10.241.1.52,1524,280326,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH032605,QA,Pune,TJH,28,REG5810 ,10.241.1.1,0326,10.241.1.125,05,10.241.1.51,1524,280326,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH046501,QA,Pune,TJH,28,REG5800,10.241.1.7,0465,10.241.1.124,01,10.241.1.65,1524,280465,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH046502,QA,Pune,TJH,28,REG5800,10.241.1.9,0465,10.241.1.124,02,10.241.1.59,1524,280465,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH046503,QA,Pune,TJH,28,REG5810,10.241.1.6,0465,10.241.1.124,03,10.241.1.56,1524,280465,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH046504,QA,Pune,TJH,28,REG5810,10.241.1.8,0465,10.241.1.124,04,10.241.1.58,1524,280465,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH046505,QA,Pune,TJH,28,REG5810,10.241.1.10,0465,10.241.1.124,05,10.241.1.54,1524,280465,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH068801,QA,Pune,TJH,28,REG5800,10.241.1.12,0688,10.241.1.123,01,10.241.1.62,1524,280688,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH068802,QA,Pune,TJH,28,REG5800,10.241.1.13,0688,10.241.1.123,02,10.241.1.63,1524,280688,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH068803,QA,Pune,TJH,28,REG5800,10.241.1.14,0688,10.241.1.123,03,10.241.1.64,1524,280688,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH068804,QA,Pune,TJH,28,REG5810,10.241.1.11,0688,10.241.1.123,04,10.241.1.55,1524,280688,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH068805,QA,Pune,TJH,28,REG5810,10.241.1.15,0688,10.241.1.123,05,10.241.1.57,1524,280688,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH032600,QA,Pune,TJH,28,HyperV,10.241.1.125,0326,10.241.1.125,00,NA,1524,280326,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH046500,QA,Pune,TJH,28,HyperV,10.241.1.124,0465,10.241.1.124,00,NA,1524,280465,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH068800,QA,Pune,TJH,28,HyperV,10.241.1.123,0688,10.241.1.123,00,NA,1524,280688,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH010701,QA,400 Value Way,TJH,28,REG5800,172.26.212.197,0107,172.26.212.195,01,172.26.212.200,1524,280107,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH010702,QA,400 Value Way,TJH,28,REG5800,172.26.212.198,0107,172.26.212.195,02,172.26.212.201,1524,280107,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH010703,QA,400 Value Way,TJH,28,REG5810,172.26.212.199,0107,172.26.212.195,03,172.26.212.202,1524,280107,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH059401,QA,400 Value Way,TJH,28,REG5800,172.26.212.205,0594,172.26.212.203,01,172.26.212.207,1524,280594,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH059402,QA,400 Value Way,TJH,28,REG5810,172.26.212.206,0594,172.26.212.203,02,172.26.212.208,1524,280594,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH029601,QA,400 Value Way,TJH,28,REG5800,172.26.212.214,0296,172.26.212.212,01,172.26.212.216,1524,280296,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH029602,QA,400 Value Way,TJH,28,REG5810,172.26.212.215,0296,172.26.212.212,02,172.26.212.217,1524,280296,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH010700,QA,400 Value Way,TJH,28,HyperV,172.26.212.195,0107,172.26.212.195,00,NA,1524,280107,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH059400,QA,400 Value Way,TJH,28,HyperV,172.26.212.203,0594,172.26.212.203,00,NA,1524,280594,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH029600,QA,400 Value Way,TJH,28,HyperV,172.26.212.212,0296,172.26.212.212,00,NA,1524,280296,xohs-poshgq.tjx.com,xadmin-poshgq.tjx.com,xoffice-poshgq.tjx.com
+TJH010101,TAB,400 Value Way,TJH,28,REG5800,172.26.211.230,0101,172.26.211.236,01,172.26.211.231,1521,280101,ohs-poshgta.tjx.com,xadmin-poshgta.tjx.com,xoffice-techarch.tjx.com
+TJH010102,TAB,400 Value Way,TJH,28,REG5810,172.26.211.232,0101,172.26.211.236,02,172.26.211.233,1521,280101,ohs-poshgta.tjx.com,xadmin-poshgta.tjx.com,xoffice-techarch.tjx.com
+TJH010100,TAB,400 Value Way,TJH,28,HyperV,172.26.211.236,0101,172.26.211.236,00,NA,1521,280101,ohs-poshgta.tjx.com,xadmin-poshgta.tjx.com,xoffice-techarch.tjx.com
+TJH012101,CD,400 Value Way,TJH,28,REG5800,172.26.211.241,0121,172.26.211.246,01,172.26.211.239,1521,280121,xohs-poshgdc.tjx.com,xadmin-poshdc.tjx.com,xoffice-poshgdc.tjx.com
+TJH012102,CD,400 Value Way,TJH,28,REG5810,172.26.211.243,0121,172.26.211.246,02,172.26.211.240,1521,280121,xohs-poshgdc.tjx.com,xadmin-poshdc.tjx.com,xoffice-poshgdc.tjx.com
+TJH012100,CD,400 Value Way,TJH,28,HyperV,172.26.211.246,0121,172.26.211.246,00,NA,1521,280121,xohs-poshgdc.tjx.com,xadmin-poshdc.tjx.com,xoffice-poshgdc.tjx.com
+TJH038401,PE,400 Value Way,TJH,28,REG5800,172.26.212.223,0384,172.26.212.221,01,172.26.212.225,1525,280384,xohs-poshgpf.tjx.com,xadmin-poshgpf.tjx.com,xoffice-poshgpf.tjx.com
+TJH038402,PE,400 Value Way,TJH,28,REG5810,172.26.212.224,0384,172.26.212.221,02,172.26.212.226,1525,280384,xohs-poshgpf.tjx.com,xadmin-poshgpf.tjx.com,xoffice-poshgpf.tjx.com
+TJH044201,PE,400 Value Way,TJH,28,REG5800,172.26.212.227,0442,172.26.212.234,01,172.26.212.229,1525,280442,xohs-poshgpf.tjx.com,xadmin-poshgpf.tjx.com,xoffice-poshgpf.tjx.com
+TJH044202,PE,400 Value Way,TJH,28,REG5810,172.26.212.228,0442,172.26.212.234,02,172.26.212.230,1525,280442,xohs-poshgpf.tjx.com,xadmin-poshgpf.tjx.com,xoffice-poshgpf.tjx.com
+TJH038400,PE,400 Value Way,TJH,28,HyperV,172.26.212.221,0384,172.26.212.221,00,NA,1525,280384,xohs-poshgpf.tjx.com,xadmin-poshgpf.tjx.com,xoffice-poshgpf.tjx.com
+TJH044200,PE,400 Value Way,TJH,28,HyperV,172.26.212.234,0442,172.26.212.234,00,NA,1525,280442,xohs-poshgpf.tjx.com,xadmin-poshgpf.tjx.com,xoffice-poshgpf.tjx.com
